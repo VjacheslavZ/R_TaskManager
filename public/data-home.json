@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "taskName":"task 1",
+        "taskText":"Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "isDone":true,
+        "category":"Home"
+    },
+    {
+        "id":2,
+        "taskName":"task 2",
+        "taskText":"Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "isDone":false,
+        "category":"Home"
+    },
+    {
+        "id":3,
+        "taskName":"task 3",
+        "taskText":"Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+        "isDone":false,
+        "category":"Home"
+    }
+]
