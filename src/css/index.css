@@ -143,8 +143,7 @@ body {
 .bg {
     min-height: 600px;
     height: 100vh;
-    /*background: url(header_bg.jpg) no-repeat;*/
-    -webkit-background-size: cover;
+    background: url(../img/bg.jpg) no-repeat center center;
     background-size: cover; }
 
 .main-wrap {

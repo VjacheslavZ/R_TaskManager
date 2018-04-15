@@ -6,7 +6,9 @@ class Root extends Component {
         super();
         this.state = {
             list: []
-        }
+        };
+
+        // this.onEditTask = this.onEditTask.bind(this);
     }
     componentWillMount(){
         this.getListTasks()
@@ -19,6 +21,12 @@ class Root extends Component {
                     list
                 })
             })
+    }
+    onEditTask(id){
+        console.log(`${id} edit`);
+    }
+    onDellTask(id){
+        console.log(`${id} dell`);
     }
 
     render(){
@@ -52,7 +60,10 @@ class Root extends Component {
                                 </ul>
                             </div>
 
-                            <CategoryList dataList={this.state}/>
+                            <CategoryList dataList={this.state.list}
+                                          onEditTask={this.onEditTask}
+                                          onDellTask={this.onDellTask}
+                            />
 
                         </div>
                     </div>

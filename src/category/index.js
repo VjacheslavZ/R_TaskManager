@@ -1,15 +1,21 @@
 import React from 'react';
 import { List } from '../categoryList'
 
-export const CategoryList = (lists) => {
-    lists.map(function (item) {
-        console.log(item)
-    })
+export const CategoryList = (props) => {
+
     return(
         <div className="category-list">
             <span> Tasks</span>
             <ul className="category-list__todo">
-                <List/>
+                {
+                    props.dataList.map(task =>
+                        <List data={task}
+                              key={task.id}
+                              onEditTask = {props.onEditTask}
+                              onDellTask = {props.onDellTask}
+                              />
+                    )
+                }
             </ul>
         </div>
     );

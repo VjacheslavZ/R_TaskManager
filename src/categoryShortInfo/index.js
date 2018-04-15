@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const ShortInfo = () => {
-  return(
+export const Info = (props) => {
+    return(
       <div className="category-list__short-info">
-          <span className="category-list__task-name">Task name</span>
-          <span className="category-list__task-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, explicabo numquam. Culpa cumque obcaecati quaerat. Beatae commodi consectetur deleniti deserunt eos, eum laboriosam laudantium maxime nobis quam quia, rerum totam!</span>
+          <span className="category-list__task-name">{props.description.taskName}</span>
+          <span className="category-list__task-text">{props.description.taskText}</span>
       </div>
-  )
+    )
 };
