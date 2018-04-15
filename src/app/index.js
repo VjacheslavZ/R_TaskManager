@@ -4,7 +4,9 @@ import { CategoryList } from '../category';
 class Root extends Component {
     constructor() {
         super();
-        //place for define state
+        this.state = {
+            list: []
+        }
     }
     componentWillMount(){
         this.getListTasks()
@@ -50,7 +52,8 @@ class Root extends Component {
                                 </ul>
                             </div>
 
-                            <CategoryList/>
+                            <CategoryList dataList={this.state}/>
+
                         </div>
                     </div>
                 </div>
