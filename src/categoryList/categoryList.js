@@ -1,6 +1,6 @@
 import React from 'react'
-import { Info } from '../categoryShortInfo'
-import { Control } from "../categoryControls";
+import { Info } from '../categoryShortInfo/categoryShortInfo'
+import { Control } from "../categoryControls/categoryControls";
 
 export const List = (props) => {
     return(

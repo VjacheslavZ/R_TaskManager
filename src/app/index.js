@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { CategoryList } from '../category';
+import { CategoryList } from '../category/category';
 
 class Root extends Component {
     constructor() {
@@ -22,8 +22,10 @@ class Root extends Component {
                 })
             })
     }
-    onEditTask(id){
+
+    onEditTask(id, state){
         console.log(`${id} edit`);
+        state = true
     }
     onDellTask(id){
         console.log(`${id} dell`);
