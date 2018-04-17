@@ -28,7 +28,13 @@ class Root extends Component {
     }
 
     toggleDone(id) {
-        console.log(id)
+        const updatedItem = Object.assign(
+            {}, this.state.list[id], {done: !this.state.list[id].done}
+        );
+
+        this.setState({
+            list: Object.assign({}, this.state.list, { [id]: updatedItem })
+        });
     }
 
     saveItem(id, taskText){
@@ -79,7 +85,6 @@ class Root extends Component {
                                           saveItem={ this.saveItem }
 
                             />
-
                         </div>
                     </div>
                 </div>
