@@ -5,14 +5,18 @@ class Root extends Component {
     constructor() {
         super();
         this.state = {
-            list: []
+            list: [],
         };
 
-        // this.onEditTask = this.onEditTask.bind(this);
+        this.toggleDone = this.toggleDone.bind(this);
+        this.saveItem = this.saveItem.bind(this);
+
     }
+
     componentWillMount(){
         this.getListTasks()
     }
+
     getListTasks(){
         fetch('data-home.json')
             .then(resp => resp.json())
@@ -23,12 +27,20 @@ class Root extends Component {
             })
     }
 
-    onEditTask(id, state){
-        console.log(`${id} edit`);
-        state = true
+    toggleDone(id) {
+        console.log(id)
     }
-    onDellTask(id){
-        console.log(`${id} dell`);
+
+    saveItem(id, taskText){
+        const updatedItem = Object.assign(
+            {}, this.state.list[id], { taskText }
+        );
+
+        this.setState({
+            list: Object.assign(
+                {}, this.state.list, { [id]: updatedItem
+            })
+        });
     }
 
     render(){
@@ -63,8 +75,9 @@ class Root extends Component {
                             </div>
 
                             <CategoryList dataList={this.state.list}
-                                          onEditTask={this.onEditTask}
-                                          onDellTask={this.onDellTask}
+                                          toggleDone={ this.toggleDone }
+                                          saveItem={ this.saveItem }
+
                             />
 
                         </div>
