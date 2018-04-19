@@ -1,8 +1,4 @@
-import React, {Component, PureComponent, Fragment} from 'react';
-
-import { Info } from '../categoryShortInfo/categoryShortInfo'
-import { Control } from "../categoryControls/categoryControls";
-
+import React, {PureComponent, Fragment} from 'react';
 
 export class List extends PureComponent{
     constructor(){
@@ -66,8 +62,6 @@ const Item = ({data,toggleDone, toggleMode}) => (
 const EditItem = ({data, saveItem, toggleMode}) => {
     let taskName = null;
     let taskText = null;
-
-    console.log(data, saveItem, toggleMode);
 
     const onSave = () => {
         const { id } = data;

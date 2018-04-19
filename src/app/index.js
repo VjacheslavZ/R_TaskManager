@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import { CategoryList } from '../category/category';
 import { CategorySection } from '../categorySection/categorySection';
 
@@ -15,9 +16,8 @@ class Root extends Component {
     }
 
     componentWillMount(){
-        this.getListTasks()
-        this.getNavMenu()
-
+        this.getNavMenu();
+        this.getListTasks();
     }
 
     getListTasks(){
@@ -37,7 +37,7 @@ class Root extends Component {
                 this.setState({
                     navMenu,
                 })
-            })
+            });
     }
 
     toggleDone(id) {
@@ -64,6 +64,7 @@ class Root extends Component {
 
     render(){
         return(
+
             <main className='my-content'>
                 <div className='bg'>
                     <div className='main-wrap'>
@@ -75,13 +76,23 @@ class Root extends Component {
                             </div>
                         </div>
                         <div className="main-section">
-                            <CategorySection
-                                dataMenu={this.state.navMenu}/>
+
+                            <div className="category-section">
+                                <span>Category</span>
+                                {
+                                    this.state.navMenu
+                                        ?
+                                        <CategorySection items={this.state.navMenu}/>
+                                        :
+                                        null
+                                }
+                            </div>
+
                             <CategoryList dataList={this.state.list}
                                           toggleDone={ this.toggleDone }
                                           saveItem={ this.saveItem }
-
                             />
+
                         </div>
                     </div>
                 </div>
