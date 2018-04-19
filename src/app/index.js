@@ -1,20 +1,23 @@
 import React, {Component} from 'react';
 import { CategoryList } from '../category/category';
+import { CategorySection } from '../categorySection/categorySection';
 
 class Root extends Component {
     constructor() {
         super();
         this.state = {
             list: [],
+            // navMenu: [],
         };
 
         this.toggleDone = this.toggleDone.bind(this);
         this.saveItem = this.saveItem.bind(this);
-
     }
 
     componentWillMount(){
         this.getListTasks()
+        this.getNavMenu()
+
     }
 
     getListTasks(){
@@ -22,7 +25,17 @@ class Root extends Component {
             .then(resp => resp.json())
             .then(list => {
                 this.setState({
-                    list
+                    list,
+                })
+            })
+    }
+
+    getNavMenu(){
+        fetch('data-categories.json')
+            .then(resp => resp.json())
+            .then(navMenu => {
+                this.setState({
+                    navMenu,
                 })
             })
     }
@@ -37,9 +50,9 @@ class Root extends Component {
         });
     }
 
-    saveItem(id, taskText){
+    saveItem(id, taskText, taskName){
         const updatedItem = Object.assign(
-            {}, this.state.list[id], { taskText }
+            {}, this.state.list[id], { taskText, taskName }
         );
 
         this.setState({
@@ -62,24 +75,8 @@ class Root extends Component {
                             </div>
                         </div>
                         <div className="main-section">
-                            <div className="category-section">
-                                <span>Category</span>
-                                <ul className="category-section__menu">
-                                    <li><a href="#">Home</a>
-                                        <ul>
-                                            <li><a href="#">Home 1.1</a></li>
-                                            <li><a href="#">Home 1.2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">About</a>
-                                        <ul>
-                                            <li><a href="#">About 1.1</a></li>
-                                            <li><a href="#">About 1.2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-
+                            <CategorySection
+                                dataMenu={this.state.navMenu}/>
                             <CategoryList dataList={this.state.list}
                                           toggleDone={ this.toggleDone }
                                           saveItem={ this.saveItem }

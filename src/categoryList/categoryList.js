@@ -22,24 +22,22 @@ export class List extends PureComponent{
     render(){
         const {editMode} = this.state;
         const {toggleMode} = this;
-        console.log(this.props);
+
         return(
             <li>
                 <div className="category-list__info">
                     {
-
                         editMode
-                        ? <EditItem {...this.props}
+                            ? <EditItem {...this.props}
+                                        toggleMode={ toggleMode }/>
+                            : <Item {...this.props}
                                     toggleMode={ toggleMode }/>
-                        : <Item {...this.props}
-                                toggleMode={ toggleMode }/>
                     }
-
                 </div>
 
-                <div className="category-list__full-desc">
-                    <textarea/>
-                </div>
+                {/*<div className="category-list__full-desc">*/}
+                    {/*<textarea/>*/}
+                {/*</div>*/}
             </li>
         )
     }
@@ -66,58 +64,37 @@ const Item = ({data,toggleDone, toggleMode}) => (
 );
 
 const EditItem = ({data, saveItem, toggleMode}) => {
-    let textField = null;
+    let taskName = null;
+    let taskText = null;
 
-    // console.log(data, saveItem, toggleMode);
+    console.log(data, saveItem, toggleMode);
 
     const onSave = () => {
         const { id } = data;
-        const text = textField.value;
+        const newTaskText = taskText.value;
+        const newTaskName = taskName.value;
 
-        saveItem(id, text);
+        saveItem(id, newTaskText, newTaskName);
         toggleMode();
     };
 
     return(
         <Fragment>
             <input type="text"
-                   ref={ input => { textField = input; } }
+                   ref={ input => { taskName = input; } }
+                   defaultValue={ data.taskName }
+            />
+
+            <input type="text"
+                   ref={ input => { taskText = input; } }
                    defaultValue={ data.taskText }
             />
 
             <div className="category-list__control">
-                <button className="category-list__edit" onClick={ onSave }>Save </button>
+                <button className="category-list__edit" onClick={ onSave }> Save </button>
                 <button className="category-list__dell" onClick={ toggleMode }> Cansel </button>
             </div>
         </Fragment>
     )
 };
-
-
-
-
-
-
-//--------------------------------------------
-export const ListOld = (props) => {
-    const {id, isDone, ...data} = props.data;
-
-    return(
-        <li>
-            <div className="category-list__info">
-
-                <input type="checkbox" defaultChecked={isDone}/>
-
-                <Info description={data}/>
-                <Control id={id}
-                />
-            </div>
-
-            <div className="category-list__full-desc">
-                <textarea/>
-            </div>
-        </li>
-    )
-};
-
 
