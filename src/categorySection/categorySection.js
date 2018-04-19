@@ -6,8 +6,10 @@ import {NavBar} from '../navBar/navBar'
 export const CategorySection = (props) =>({
     generateItem(item){
         return <NavBar text={item.text}
-                           url={item.url}
-                           submenu={item.submenu} />
+                       url={item.url}
+                       submenu={item.submenu}
+                       key={item.id}
+                       id={item.id}/>
     },
 
     render() {
@@ -25,35 +27,28 @@ export const CategorySection = (props) =>({
 var data = [
     {
         "text": "Link 1",
-        "url": "#"
+        "url": "#",
+        "id": 0
     },
     {
         "text": "Link 2",
-        "url": "#"
+        "url": "#",
+        "id": 1
     },
     {
         "text": "Link 3",
         "url": "#",
+        "id": 2,
         "submenu": [
             {
                 "text": "Sublink 1",
                 "url": "#",
-                "submenu": [
-                    {
-                        "text": "SubSublink 1",
-                        "url": "#"
-                    }
-                ]
+                "id": 3
             },
             {
                 "text": "Sublink 2",
                 "url":"#",
-                "submenu": [
-                    {
-                        "text": "SubSublink 2",
-                        "url": "#"
-                    }
-                ]
+                "id": 5
             }
         ]
     }

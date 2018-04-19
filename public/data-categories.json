@@ -1,25 +1,28 @@
 [
     {
         "text": "Link 1",
-        "url": "#"
+        "url": "#",
+        "id": 0
     },
-
     {
         "text": "Link 2",
-        "url": "#"
+        "url": "#",
+        "id": 1
     },
-
     {
         "text": "Link 3",
         "url": "#",
+        "id": 2,
         "submenu": [
             {
-                "text": "Sublink 3.1",
-                "url": "#"
+                "text": "Sublink 1",
+                "url": "#",
+                "id": 3
             },
             {
-                "text": "Sublink 3.2",
-                "url":"#"
+                "text": "Sublink 2",
+                "url":"#",
+                "id": 5
             }
         ]
     }

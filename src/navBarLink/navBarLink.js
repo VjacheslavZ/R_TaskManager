@@ -1,9 +1,9 @@
 import React from "react";
 
 export const NavBarLink = (props) => ({
-    render: function() {
+    render() {
         return (
-            <a href={props.url}> { props.text } </a>
+            <a href={props.url} key={props.id}> { props.text } </a>
         );
     }
 });
