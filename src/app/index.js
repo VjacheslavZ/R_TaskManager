@@ -21,7 +21,7 @@ class Root extends Component {
     }
 
     getListTasks(){
-        fetch('data-home.json')
+        fetch('data-tasks.json')
             .then(resp => resp.json())
             .then(list => {
                 this.setState({

@@ -29,7 +29,6 @@ const Tasks = (props) =>{
     });
 
     return(
-
         <ul className="category-list__todo">
             {
                 sortedCategory.length ?
