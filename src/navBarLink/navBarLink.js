@@ -4,7 +4,7 @@ import { NavLink } from  'react-router-dom';
 export const NavBarLink = (props) => ({
     render() {
         return (
-            <NavLink to={props.url}> { props.text } </NavLink>
+            <NavLink exact to={props.url}> { props.text } </NavLink>
         );
     }
 });

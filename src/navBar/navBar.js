@@ -19,8 +19,8 @@ export const NavBar = (props) => ({
         const content = [this.generateLink()];
 
         if(this.props.submenu){
-            const mainUrl = this.props.url;
-            const subMenuFullUrl = mainUrl + "/" + this.props.submenu[0].url;
+            // const mainUrl = this.props.url;
+            // const subMenuFullUrl = mainUrl + "/" + this.props.submenu[0].url;
             // this.props.submenu[0].url = subMenuFullUrl;
             content.push(this.generateSubmenu());
         }

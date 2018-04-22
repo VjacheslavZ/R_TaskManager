@@ -1,6 +1,4 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-
 import {NavBar} from '../navBar/navBar'
 
 export const CategorySection = (props) =>({
@@ -8,7 +6,7 @@ export const CategorySection = (props) =>({
         return <NavBar text={item.text}
                        url={item.url}
                        submenu={item.submenu}
-                       key={item.id + 5}
+                       key={item.id}
                        id={item.id}/>
     },
 
@@ -24,7 +22,7 @@ export const CategorySection = (props) =>({
 });
 
 
-var data = [
+/*var data = [
     {
         "text": "Today",
         "url": "today",
@@ -61,7 +59,7 @@ var data = [
             }
         ]
     }
-];
+];*/
 
 
 

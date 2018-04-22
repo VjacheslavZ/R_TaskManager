@@ -80,11 +80,7 @@ class Root extends Component {
                             <div className="category-section">
                                 <span>Category</span>
                                 {
-                                    this.state.navMenu
-                                        ?
-                                        <CategorySection items={this.state.navMenu}/>
-                                        :
-                                        null
+                                    checkState(this.state.navMenu)
                                 }
                             </div>
 
@@ -99,4 +95,13 @@ class Root extends Component {
         )
     }
 }
+
+function checkState(state) {
+    if(state){
+        return(
+            <CategorySection items={state}/>
+        )
+    }
+}
+
 export default Root;

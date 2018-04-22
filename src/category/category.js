@@ -1,6 +1,6 @@
 import React from 'react';
 import { map, filter } from 'lodash';
-import { Route } from  'react-router-dom';
+import { Switch, Route } from  'react-router-dom';
 
 import { List } from '../categoryList/categoryList'
 
@@ -9,10 +9,11 @@ export const CategoryList = (props) => {
     return(
         <div className="category-list">
             <span> Tasks</span>
-
-            <Route  path='/:category'component ={(route)=>(
+            <Switch>
+                <Route path='/:category' component ={(route)=>(
                     <Tasks {...props} {...route} />
-            )}/>
+                )}/>
+            </Switch>
         </div>
     );
 };
