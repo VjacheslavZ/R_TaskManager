@@ -19,5 +19,12 @@
         "taskText":"task text 2",
         "isDone":false,
         "category":"today"
+    },
+    {
+        "id":3,
+        "taskName":"task 3",
+        "taskText":"task text 3",
+        "isDone":false,
+        "category":"try-react"
     }
 ]
