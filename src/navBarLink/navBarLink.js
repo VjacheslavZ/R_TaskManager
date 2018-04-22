@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from  'react-router-dom';
 
 export const NavBarLink = (props) => ({
     render() {
         return (
-            <a href={props.url}> { props.text } </a>
+            <NavLink to={props.url}> { props.text } </NavLink>
         );
     }
 });

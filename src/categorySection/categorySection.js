@@ -1,7 +1,7 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import {NavBar} from '../navBar/navBar'
-
 
 export const CategorySection = (props) =>({
     generateItem(item){
@@ -26,30 +26,47 @@ export const CategorySection = (props) =>({
 
 var data = [
     {
-        "text": "Link 1",
-        "url": "#",
-        "id": 0
+        "text": "Today",
+        "url": "today",
+        "id": 0,
+        "submenu": [
+            {
+                "text": "Try React",
+                "url": "try-react",
+                "id": 1
+            }
+        ]
     },
     {
-        "text": "Link 2",
-        "url": "#",
-        "id": 1
-    },
-    {
-        "text": "Link 3",
-        "url": "#",
+        "text": "Work",
+        "url": "work",
         "id": 2,
         "submenu": [
             {
-                "text": "Sublink 1",
-                "url": "#",
+                "text": "Introducing JSX",
+                "url": "introducing-jsx",
                 "id": 3
-            },
+            }
+        ]
+    },
+    {
+        "text": "Notes",
+        "url": "notes",
+        "id": 7,
+        "submenu": [
             {
-                "text": "Sublink 2",
-                "url":"#",
-                "id": 5
+                "text": "React",
+                "url": "ref-react",
+                "id": 8
             }
         ]
     }
 ];
+
+
+
+
+
+
+
+

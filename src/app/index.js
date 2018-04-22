@@ -92,7 +92,6 @@ class Root extends Component {
                                           toggleDone={ this.toggleDone }
                                           saveItem={ this.saveItem }
                             />
-
                         </div>
                     </div>
                 </div>

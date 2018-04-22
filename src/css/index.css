@@ -349,3 +349,8 @@ body {
     height: 70px;
     opacity: 1;
     visibility: visible; }
+
+
+.selected{
+    color: red;
+}

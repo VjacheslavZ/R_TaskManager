@@ -4,20 +4,20 @@
         "taskName":"task 0",
         "taskText":"task text 0",
         "isDone":true,
-        "category":"Home"
+        "category":"today"
     },
     {
         "id":1,
         "taskName":"task 1",
         "taskText":"task text 1",
         "isDone":false,
-        "category":"Home"
+        "category":"work"
     },
     {
         "id":2,
         "taskName":"task 2",
         "taskText":"task text 2",
         "isDone":false,
-        "category":"Home"
+        "category":"today"
     }
 ]

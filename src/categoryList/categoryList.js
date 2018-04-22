@@ -18,7 +18,6 @@ export class List extends PureComponent{
     render(){
         const {editMode} = this.state;
         const {toggleMode} = this;
-
         return(
             <li>
                 <div className="category-list__info">
@@ -40,7 +39,6 @@ export class List extends PureComponent{
 }
 
 const Item = ({data,toggleDone, toggleMode}) => (
-
     <Fragment>
         <input type="checkbox"
             defaultChecked={data.isDone}
