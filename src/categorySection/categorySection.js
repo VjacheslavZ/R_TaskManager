@@ -8,7 +8,7 @@ export const CategorySection = (props) =>({
         return <NavBar text={item.text}
                        url={item.url}
                        submenu={item.submenu}
-                       key={item.id}
+                       key={item.id + 5}
                        id={item.id}/>
     },
 

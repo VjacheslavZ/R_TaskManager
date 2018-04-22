@@ -9,11 +9,11 @@ export const NavBar = (props) => ({
                     url={this.props.url}
                     text={this.props.text}
                     id={this.props.id}
-                    key={this.props.id}
+                    key={this.props.id + 10} /*<=how get here key correct*/
         />;
     },
     generateSubmenu(){
-        return <CategorySection items={props.submenu} />
+        return <CategorySection items={props.submenu} key={props.id}/>
     },
     generateContent(){
         const content = [this.generateLink()];
@@ -26,8 +26,9 @@ export const NavBar = (props) => ({
 
     render(){
         const content = this.generateContent();
+
         return (
-            <li key={this.props.id}>
+            <li>
                 {content}
             </li>
         );
