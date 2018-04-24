@@ -5,7 +5,6 @@ import { Switch, Route } from  'react-router-dom';
 import { List } from '../categoryList/categoryList'
 
 export const CategoryList = (props) => {
-
     return(
         <div className="category-list">
             <span> Tasks</span>

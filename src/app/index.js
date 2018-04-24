@@ -3,16 +3,80 @@ import React, {Component} from 'react';
 import { CategoryList } from '../category/category';
 import { CategorySection } from '../categorySection/categorySection';
 
+import { Sidebar } from '../sidebar/sideBar';
+
+const categories = {
+    1:
+        {
+            id: 1,
+            name: 'React',
+            parentId: null},
+    2:
+        {
+            id: 2,
+            name: 'Introducing JSX',
+            parentId: 1},
+    3:
+        {
+            id: 3,
+            name: 'Rendering Elements',
+            parentId: 1},
+    4:
+        {
+            id: 4,
+            name: 'Components and Props',
+            parentId: 3},
+    5:
+        {
+            id: 5,
+            name: 'State and Lifecycle',
+            parentId: 3},
+    6:
+        {
+            id: 6,
+            name: 'ADVANCED',
+            parentId: null},
+    7:
+        {
+            id: 7,
+            name: 'JSX In Depth',
+            parentId: 6},
+    8:
+        {
+            id: 8,
+            name: 'Type checking With PropTypes',
+            parentId: 6},
+};
+
+
+const todos = {
+    1: {id: 1, text: 'Выучить реакт', done: true, categoryId: 1},
+    2: {id: 2, text: 'Выучить реакт-роутер', done: false, categoryId: 2},
+    3: {id: 3, text: 'Выучить редакс', done: false, categoryId: 3},
+    4: {id: 4, text: 'task 1', done: true, categoryId: 1},
+    5: {id: 5, text: 'task 2', done: false, categoryId: 2},
+    6: {id: 6, text: 'task 3', done: false, categoryId: 3},
+};
+
+
+
 class Root extends Component {
+
+
     constructor() {
         super();
         this.state = {
             list: [],
             // navMenu: [],
+            todos,
+            categories,
+            selectedCat: 1
         };
 
         this.toggleDone = this.toggleDone.bind(this);
         this.saveItem = this.saveItem.bind(this);
+
+        this.selectCat = this.selectCat.bind(this);
     }
 
     componentWillMount(){
@@ -62,6 +126,13 @@ class Root extends Component {
         });
     }
 
+
+    selectCat(id) {
+        this.setState({
+            selectedCat: id
+        });
+    }
+
     render(){
         return(
 
@@ -79,9 +150,16 @@ class Root extends Component {
 
                             <div className="category-section">
                                 <span>Category</span>
-                                {
-                                    checkState(this.state.navMenu)
-                                }
+                                {/*{*/}
+                                    {/*checkState(this.state.navMenu)*/}
+                                {/*}*/}
+
+                                { this.state.selectedCat }
+
+                                <Sidebar categories={ this.state.categories }
+                                         selectCat={ this.selectCat }/>
+
+
                             </div>
 
                             <CategoryList dataList={this.state.list}
@@ -96,12 +174,12 @@ class Root extends Component {
     }
 }
 
-function checkState(state) {
-    if(state){
-        return(
-            <CategorySection items={state}/>
-        )
-    }
-}
+// function checkState(state) {
+//     if(state){
+//         return(
+//             <CategorySection items={state}/>
+//         )
+//     }
+// }
 
 export default Root;
