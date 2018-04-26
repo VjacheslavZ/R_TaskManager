@@ -8,22 +8,24 @@ export const CategoryList = (props) => {
     return(
         <div className="category-list">
             <span> Tasks</span>
+
             <Switch>
                 <Route path='/:category' component ={(route)=>(
                     <Tasks {...props} {...route} />
                 )}/>
             </Switch>
+
         </div>
     );
 };
 
 const Tasks = (props) =>{
-    const {dataList, saveItem, toggleDone} = props;
+    const {dataList, saveItem, toggleDone, selectCatId} = props;
     const category = props.match.params.category;
 
     const sortedCategory =[];
     filter(dataList, (task)=>{
-        if(task.category === category){
+        if(task.id === selectCatId){
             sortedCategory.push(task)
         }
     });

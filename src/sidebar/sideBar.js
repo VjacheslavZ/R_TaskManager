@@ -1,11 +1,18 @@
 import React from 'react';
+import { NavLink } from  'react-router-dom';
+
 import { map } from 'lodash';
 
+let category;
+let subCategory;
 
-const CategoryItem = ({ category, categories, selectCat }) => {
+
+const CategoryItem = ({ category, categories, selectCat, url}) => {
     return (
         <li >
-            <button onClick={ () => selectCat(category.id) }>{ category.name }</button>
+            <NavLink to={url} onClick={ () => selectCat(category.id) }>
+                { category.name }
+            </NavLink>
             {
                 <CategoryList categories={ categories }
                               parentId={ category.id }
@@ -22,6 +29,7 @@ const CategoryList = ({ categories, parentId, selectCat }) => (
                 cat.parentId === parentId
                 && <CategoryItem key={cat.id}
                                  category={ cat }
+                                 url={cat.url}
                                  categories={ categories }
                                  selectCat={ selectCat }/>
             )
@@ -31,7 +39,7 @@ const CategoryList = ({ categories, parentId, selectCat }) => (
 
 export const Sidebar = ({ categories, selectCat }) => {
     return (
-        <div className="">
+        <div>
             <span> Tasks</span>
             <CategoryList categories={ categories }
                           parentId={ null }

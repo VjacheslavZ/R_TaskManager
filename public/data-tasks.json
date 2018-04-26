@@ -1,14 +1,14 @@
 [
     {
         "id":0,
-        "category":"today",
+        "category":"react",
         "taskName":"task 0",
         "taskText":"task text 0",
         "isDone":true
     },
     {
         "id":1,
-        "category":"work",
+        "category":"react/introducing-jsx",
         "taskName":"task 1",
         "taskText":"task text 1",
         "isDone":false
@@ -24,6 +24,13 @@
         "id":3,
         "category":"try-react",
         "taskName":"task 3",
+        "taskText":"task text 3",
+        "isDone":false
+    },
+    {
+        "id":8,
+        "category":"try-react",
+        "taskName":"task 8",
         "taskText":"task text 3",
         "isDone":false
     }
