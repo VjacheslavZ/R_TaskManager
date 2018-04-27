@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
-
 import { CategoryList } from '../category/category';
-import { CategorySection } from '../categorySection/categorySection';
-
 import { Sidebar } from '../sidebar/sideBar';
 
 const categories = {
@@ -57,71 +54,71 @@ const categories = {
             parentId: 6},
 };
 
-
-const todos = {
-    1: {
-        id: 1,
-        text: 'Выучить реакт',
-        done: true,
-        categoryId: 1},
-    2: {id: 2,
-        text: 'Выучить реакт-роутер',
-        done: false,
-        categoryId: 2},
-    3: {id: 3,
-        text: 'Выучить редакс',
-        done: false,
-        categoryId: 3},
-    4: {id: 4,
-        text: 'task 1',
-        done: true,
-        categoryId: 1},
-    5: {id: 5,
-        text: 'task 2',
-        done: false,
-        categoryId: 2},
-    6: {id: 6,
-        text: 'task 3',
-        done: false,
-        categoryId: 3},
-};
-
+const todos = [
+    {
+        "id":0,
+        "category":"/react",
+        "taskName":"task 0",
+        "taskText":"task text 0",
+        "isDone":true
+    },
+    {
+        "id":1,
+        "category":"/react/introducing-jsx",
+        "taskName":"task 1111",
+        "taskText":"task text 1",
+        "isDone":false
+    },
+    {
+        "id":2,
+        "category":"/react/rendering-elements/components-and-props",
+        "taskName":"task 2",
+        "taskText":"task text 2",
+        "isDone":false
+    },
+    {
+        "id":3,
+        "category":"/react/rendering-elements/components-and-props",
+        "taskName":"task 3",
+        "taskText":"task text 3",
+        "isDone":false
+    },
+    {
+        "id":8,
+        "category":"/react/rendering-elements/components-and-props",
+        "taskName":"task 8",
+        "taskText":"task text 3",
+        "isDone":false
+    }
+];
 
 
 class Root extends Component {
-
-
     constructor() {
         super();
         this.state = {
-            list: [],
-            // navMenu: [],
-            todos,
+            list: todos,
             categories,
             selectedCat: 1
         };
 
         this.toggleDone = this.toggleDone.bind(this);
         this.saveItem = this.saveItem.bind(this);
-
         this.selectCat = this.selectCat.bind(this);
     }
-
-    componentWillMount(){
+    /*componentWillMount(){
         this.getNavMenu();
         this.getListTasks();
     }
-
     getListTasks(){
         fetch('data-tasks.json')
             .then(resp => resp.json())
             .then(list => {
                 this.setState({
-                    list,
+                    list
                 })
             })
     }
-
     getNavMenu(){
         fetch('data-categories.json')
             .then(resp => resp.json())
@@ -131,7 +128,7 @@ class Root extends Component {
                 })
             });
     }
-
+    */
     toggleDone(id) {
         const updatedItem = Object.assign(
             {}, this.state.list[id], {done: !this.state.list[id].done}
@@ -162,7 +159,6 @@ class Root extends Component {
 
     render(){
         return(
-
             <main className='my-content'>
                 <div className='bg'>
                     <div className='main-wrap'>
@@ -177,17 +173,10 @@ class Root extends Component {
 
                             <div className="category-section">
                                 <span>Category</span>
-                                {/*{*/}
-                                    {/*checkState(this.state.navMenu)*/}
-                                {/*}*/}
-
-                                { this.state.selectedCat }
-
+                                {/*{ this.state.selectedCat }*/}
                                 <Sidebar categories={ this.state.categories }
                                          selectCat={ this.selectCat }
                                 />
-
-
                             </div>
 
                             <CategoryList dataList={this.state.list}
@@ -202,13 +191,5 @@ class Root extends Component {
         )
     }
 }
-
-// function checkState(state) {
-//     if(state){
-//         return(
-//             <CategorySection items={state}/>
-//         )
-//     }
-// }
 
 export default Root;
