@@ -5,7 +5,6 @@ import { Switch, Route } from  'react-router-dom';
 import { List } from '../categoryList/categoryList'
 
 export const CategoryList = (props) => {
-    // console.log(props)
     return(
         <div className="category-list">
             <span> Tasks</span>
@@ -21,15 +20,12 @@ export const CategoryList = (props) => {
 };
 
 const Tasks = (props) =>{
-    const {dataList, saveItem, toggleDone, selectCatId} = props;
-    const category = props.match.params.category;
-    const url = props
+    const {dataList, saveItem, toggleDone} = props,
+           locUrl = props.location.pathname,
+           sortedCategory =[];
 
-    console.log(props)
-
-    const sortedCategory =[];
     filter(dataList, (task)=>{
-        if(task.category === props.location.pathname){
+        if(task.category === locUrl){
             sortedCategory.push(task)
         }
     });

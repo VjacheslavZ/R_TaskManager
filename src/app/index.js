@@ -172,8 +172,7 @@ class Root extends Component {
                         <div className="main-section">
 
                             <div className="category-section">
-                                <span>Category</span>
-                                {/*{ this.state.selectedCat }*/}
+                                <span>Category: {selectedCatName(this.state)}</span>
                                 <Sidebar categories={ this.state.categories }
                                          selectCat={ this.selectCat }
                                 />
@@ -191,5 +190,13 @@ class Root extends Component {
         )
     }
 }
+
+function selectedCatName(data) {
+    const selectedCatId = data.selectedCat,
+          selectedCatName = data.categories[selectedCatId].name;
+
+    return `${selectedCatName} id:${selectedCatId}`
+}
+
 
 export default Root;
