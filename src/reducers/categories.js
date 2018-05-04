@@ -64,6 +64,5 @@ export const categories = function (state = initialState, action) {
             })
     }
 
-
     return state;
 };

@@ -1,24 +1,31 @@
 import React from 'react';
 import { CategoryItem } from './category-item';
-import { map } from 'lodash';
+import { map, compact, isEmpty } from 'lodash';
 
 export const CategoryList = ({ categories, parentId, selectCat }) => {
-    return(
-        <ul className="category-section__menu" >
-            {
-                map(categories, cat =>
-                    cat.parentId === parentId
-                    && <CategoryItem key={cat.id}
-                                     category={ cat }
-                                     url={cat.url}
-                                     categories={ categories }
-                                     selectCat={ selectCat }
+
+    const children = compact(map(categories, cat => {
+        if (cat.parentId === parentId) {
+            return(
+                <ul className="category-section__menu" >
+                    <CategoryItem key={cat.id}
+                                  category={ cat }
+                                  url={cat.url}
+                                  categories={ categories }
+                                  selectCat={ selectCat }
 
                     />
-                )
-            }
-        </ul>
-    )
+                </ul>
+
+            )
+        }
+    }));
+
+    if (!isEmpty(children)) {
+        return ( <ul>{ children }</ul> );
+    }
+
+    return null;
 };
 
 

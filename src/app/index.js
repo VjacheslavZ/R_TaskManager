@@ -51,7 +51,6 @@ class Root extends Component {
             list: todos,
             selectedCat: 1
         };
-
         this.toggleDone = this.toggleDone.bind(this);
         this.saveItem = this.saveItem.bind(this);
         this.selectCat = this.selectCat.bind(this);
