@@ -3,8 +3,10 @@ import { ContentList } from '../category/category';
 import { Sidebar } from '../sidebar';
 
 import { sidebarConnector } from '../sidebar/connector';
+import { contentConnector } from '../content/connector'
 
 const MySidebar = sidebarConnector(Sidebar);
+const MyContentList = contentConnector(ContentList);
 
 const todos = [
     {
@@ -126,11 +128,8 @@ class Root extends Component {
                                 <MySidebar selectCat={ this.selectCat }/>
                             </div>
 
-                            <ContentList dataList={this.state.list}
-                                          toggleDone={ this.toggleDone }
-                                          saveItem={ this.saveItem}
-                                          selectCatId= { this.state.selectedCat }
-                            />
+                            {/*<MyContentList toggleDone={ this.toggleDone }*/}
+                                           {/*saveItem={ this.saveItem}/>*/}
                         </div>
                     </div>
                 </div>
