@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import { CategoryList } from '../category/category';
+import { ContentList } from '../category/category';
 import { Sidebar } from '../sidebar';
 
 import { sidebarConnector } from '../sidebar/connector';
@@ -55,6 +55,7 @@ class Root extends Component {
         this.saveItem = this.saveItem.bind(this);
         this.selectCat = this.selectCat.bind(this);
     }
+
     /*componentWillMount(){
         this.getNavMenu();
         this.getListTasks();
@@ -78,6 +79,7 @@ class Root extends Component {
             });
     }
     */
+
     toggleDone(id) {
         const updatedItem = Object.assign(
             {}, this.state.list[id], {done: !this.state.list[id].done}
@@ -124,10 +126,10 @@ class Root extends Component {
                                 <MySidebar selectCat={ this.selectCat }/>
                             </div>
 
-{/*                            <CategoryList dataList={this.state.list}
+                            <ContentList dataList={this.state.list}
                                           toggleDone={ this.toggleDone }
                                           saveItem={ this.saveItem}
-                                          selectCatId= { this.state.selectedCat }*/}
+                                          selectCatId= { this.state.selectedCat }
                             />
                         </div>
                     </div>

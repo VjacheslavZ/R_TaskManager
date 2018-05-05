@@ -29,10 +29,6 @@ export class List extends PureComponent{
                                     toggleMode={ toggleMode }/>
                     }
                 </div>
-
-                {/*<div className="category-list__full-desc">*/}
-                    {/*<textarea/>*/}
-                {/*</div>*/}
             </li>
         )
     }

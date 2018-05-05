@@ -4,25 +4,23 @@ import { Switch, Route } from  'react-router-dom';
 
 import { List } from '../categoryList/categoryList'
 
-export const CategoryList = (props) => {
+export const ContentList = (props) => {
     return(
         <div className="category-list">
             <span> Tasks</span>
-
             <Switch>
                 <Route path='/:category' component ={(route)=>(
                     <Tasks {...props} {...route} />
                 )}/>
             </Switch>
-
         </div>
     );
 };
 
 const Tasks = (props) =>{
-    const {dataList, saveItem, toggleDone} = props,
-           locUrl = props.location.pathname,
-           sortedCategory =[];
+    const {dataList, saveItem, toggleDone} = props;
+    const locUrl = props.location.pathname;
+    const sortedCategory =[];
 
     filter(dataList, (task)=>{
         if(task.category === locUrl){
