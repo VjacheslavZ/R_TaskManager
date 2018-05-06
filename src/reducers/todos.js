@@ -2,57 +2,67 @@ import * as constants from '../actions/constants';
 
 
 const initialState = {
-/*    items: {
-        1: {id: 1, text: 'Выучить реакт', done: true, categoryId: 1},
-        2: {id: 2, text: 'Выучить реакт-роутер', done: false, categoryId: 2},
-        3: {id: 3, text: 'Выучить редакс', done: false, categoryId: 3},
-        4: {id: 4, text: 'task 1', done: true, categoryId: 1},
-        5: {id: 5, text: 'task 2', done: false, categoryId: 2},
-        6: {id: 6, text: 'task 3', done: false, categoryId: 3},
-    }*/
-
-    items: [
-        {
+    items: {
+        0: {
             "id":0,
             "category":"/react",
             "taskName":"task 0",
             "taskText":"task text 0",
             "isDone":true
         },
-        {
+        1: {
             "id":1,
             "category":"/react/introducing-jsx",
             "taskName":"task 1111",
             "taskText":"task text 1",
             "isDone":false
         },
-        {
+        2: {
             "id":2,
             "category":"/react/rendering-elements/components-and-props",
             "taskName":"task 2",
             "taskText":"task text 2",
             "isDone":false
         },
-        {
+        3:{
             "id":3,
             "category":"/react/rendering-elements/components-and-props",
             "taskName":"task 3",
             "taskText":"task text 3",
             "isDone":false
         },
-        {
+        8:{
             "id":8,
             "category":"/react/rendering-elements/components-and-props",
             "taskName":"task 8",
             "taskText":"task text 3",
             "isDone":false
         }
-    ]
+    }
 };
 
 
 export const todos = function (state = initialState, action) {
     const { type, payload } = action;
+
+    switch (type) {
+        case constants.TODO_DONE_TOGGLE: {
+            const id = payload;
+
+            const modifiedItem = getUpdatedListItem(state.items, id, {
+                isDone: !state.items[id].isDone
+            });
+
+            const modifiedItemList = Object.assign({}, state.items, {
+                [id]: modifiedItem
+            });
+
+            return Object.assign({}, state, {
+                items: modifiedItemList
+            });
+
+        }
+    }
 
     return state;
 };
