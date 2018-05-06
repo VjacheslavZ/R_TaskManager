@@ -3,33 +3,33 @@ import * as constants from '../actions/constants';
 
 const initialState = {
     items: {
-        0: {
-            "id": 0,
+        1: {
+            "id": 1,
             "category": "/react",
             "taskName": "task 0",
             "taskText": "task text 0",
             "isDone": true
         },
-        1: {
-            "id": 1,
+        2: {
+            "id": 2,
             "category": "/react/introducing-jsx",
             "taskName": "task 1111",
             "taskText": "task text 1",
             "isDone": false
         },
-        2: {
-            "id": 2,
+        3: {
+            "id": 3,
             "category": "/react/rendering-elements/components-and-props",
             "taskName": "task 2",
             "taskText": "task text 2",
             "isDone": false
         },
-        3: {
-            "id": 3,
+        4: {
+            "id": 4,
             "category": "/react/rendering-elements/components-and-props",
             "taskName": "task 3",
             "taskText": "task text 3",
-            "isDone": false
+            "isDone": true
         },
         8: {
             "id": 8,

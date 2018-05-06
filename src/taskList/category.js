@@ -9,7 +9,7 @@ export const TaskList = (props) => {
         <div className="task-list">
             <span> Tasks</span>
             <Switch>
-                <Route path='/:category' component={(route) => (
+                <Route path='/' component={(route) => (
                     <TasksList {...props} {...route} />
                 )}/>
             </Switch>

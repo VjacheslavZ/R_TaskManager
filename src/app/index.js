@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import { TaskList } from '../taskList/category';
 import { Sidebar } from '../sidebar';
+import {ProgressBar} from "../progressBar/propgressBar";
 
 
 import { sidebarConnector } from '../sidebar/connector';
 import { contentConnector } from '../connector/connector'
 
 
+const MyProgressBar = contentConnector(ProgressBar);
 const MySidebar = sidebarConnector(Sidebar);
 const MyContentList = contentConnector(TaskList);
 
@@ -18,15 +20,8 @@ class Root extends Component {
                 <div className='bg'>
                     <div className='main-wrap'>
                         <div className='top-section'>
-
                             <span>Progress</span>
-
-                            <div className="myProgress">
-                                <div className="myBar"></div>
-                            </div>
-
-
-
+                            <MyProgressBar/>
                         </div>
                         <div className="main-section">
 
