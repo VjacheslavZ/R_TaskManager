@@ -55,7 +55,6 @@ class Root extends Component {
         };
         this.toggleDone = this.toggleDone.bind(this);
         this.saveItem = this.saveItem.bind(this);
-        this.selectCat = this.selectCat.bind(this);
     }
 
     /*componentWillMount(){
@@ -104,12 +103,6 @@ class Root extends Component {
         });
     }
 
-    selectCat(id) {
-        this.setState({
-            selectedCat: id
-        });
-    }
-
     render(){
         return(
             <main className='my-content'>
@@ -125,7 +118,7 @@ class Root extends Component {
                         <div className="main-section">
 
                             <div className="category-section">
-                                <MySidebar selectCat={ this.selectCat }/>
+                                <MySidebar/>
                             </div>
 
                             {/*<MyContentList toggleDone={ this.toggleDone }*/}
