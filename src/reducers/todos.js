@@ -53,6 +53,18 @@ export const todos = function (state = initialState, action) {
                 isDone: !state.items[id].isDone
             });
 
+            const modifiedItemList = Object.assign({}, state.items, {[id]: modifiedItem});
+
+            return Object.assign({}, state, {items: modifiedItemList});
+        }
+        case constants.TODO_SAVE: {
+            const {id, newTaskText, newTaskName} = payload;
+
+            const modifiedItem = getUpdatedListItem(state.items, id, {
+                taskName: newTaskName,
+                taskText: newTaskText
+            });
+
             const modifiedItemList = Object.assign({}, state.items, {
                 [id]: modifiedItem
             });
@@ -60,7 +72,6 @@ export const todos = function (state = initialState, action) {
             return Object.assign({}, state, {
                 items: modifiedItemList
             });
-
         }
     }
 

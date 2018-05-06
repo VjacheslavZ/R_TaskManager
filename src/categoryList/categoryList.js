@@ -18,6 +18,7 @@ export class List extends PureComponent{
     render(){
         const {editMode} = this.state;
         const {toggleMode} = this;
+
         return(
             <li>
                 <div className="category-list__info">
@@ -34,7 +35,7 @@ export class List extends PureComponent{
     }
 }
 
-const Item = ({data,toggleDone, toggleMode}) => (
+const Item = ({data, toggleDone, toggleMode}) => (
     <Fragment>
         <input type="checkbox"
             defaultChecked={data.isDone}
@@ -53,7 +54,7 @@ const Item = ({data,toggleDone, toggleMode}) => (
     </Fragment>
 );
 
-const EditItem = ({data, saveItem, toggleMode}) => {
+const EditItem = ({data, saveItem, toggleMode, saveTodo}) => {
     let taskName = null;
     let taskText = null;
 
@@ -62,7 +63,8 @@ const EditItem = ({data, saveItem, toggleMode}) => {
         const newTaskText = taskText.value;
         const newTaskName = taskName.value;
 
-        saveItem(id, newTaskText, newTaskName);
+        saveTodo({ id, newTaskName, newTaskText });
+
         toggleMode();
     };
 
