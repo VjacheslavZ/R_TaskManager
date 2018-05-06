@@ -8,51 +8,9 @@ import { contentConnector } from '../content/connector'
 const MySidebar = sidebarConnector(Sidebar);
 const MyContentList = contentConnector(ContentList);
 
-const todos = [
-    {
-        "id":0,
-        "category":"/react",
-        "taskName":"task 0",
-        "taskText":"task text 0",
-        "isDone":true
-    },
-    {
-        "id":1,
-        "category":"/react/introducing-jsx",
-        "taskName":"task 1111",
-        "taskText":"task text 1",
-        "isDone":false
-    },
-    {
-        "id":2,
-        "category":"/react/rendering-elements/components-and-props",
-        "taskName":"task 2",
-        "taskText":"task text 2",
-        "isDone":false
-    },
-    {
-        "id":3,
-        "category":"/react/rendering-elements/components-and-props",
-        "taskName":"task 3",
-        "taskText":"task text 3",
-        "isDone":false
-    },
-    {
-        "id":8,
-        "category":"/react/rendering-elements/components-and-props",
-        "taskName":"task 8",
-        "taskText":"task text 3",
-        "isDone":false
-    }
-];
-
 class Root extends Component {
     constructor() {
         super();
-        this.state = {
-            list: todos,
-            selectedCat: 1
-        };
         this.toggleDone = this.toggleDone.bind(this);
         this.saveItem = this.saveItem.bind(this);
     }
@@ -121,8 +79,7 @@ class Root extends Component {
                                 <MySidebar/>
                             </div>
 
-                            <MyContentList toggleDone={ this.toggleDone }
-                                           saveItem={ this.saveItem}/>
+                            <MyContentList/>
                         </div>
                     </div>
                 </div>
