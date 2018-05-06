@@ -121,8 +121,8 @@ class Root extends Component {
                                 <MySidebar/>
                             </div>
 
-                            {/*<MyContentList toggleDone={ this.toggleDone }*/}
-                                           {/*saveItem={ this.saveItem}/>*/}
+                            <MyContentList toggleDone={ this.toggleDone }
+                                           saveItem={ this.saveItem}/>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import { toggleDone } from '../actions'
 export const mapStateToProps = (state) => {
     return{
         dataList: state.todos.items,
-        selectCatId: state.selectedCat
+        selectCatId: state.categories.selectedCategory
     };
 };
 
