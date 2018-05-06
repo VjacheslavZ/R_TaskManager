@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import { ContentList } from '../taskList/category';
+import { TaskList } from '../taskList/category';
 import { Sidebar } from '../sidebar';
 
 import { sidebarConnector } from '../sidebar/connector';
 import { contentConnector } from '../content/connector'
 
 const MySidebar = sidebarConnector(Sidebar);
-const MyContentList = contentConnector(ContentList);
+const MyContentList = contentConnector(TaskList);
 
 class Root extends Component {
     render(){

@@ -21,7 +21,7 @@ export class List extends PureComponent {
 
         return (
             <li>
-                <div className="category-list__info">
+                <div className="task-list__info">
                     {
                         editMode
                             ? <EditItem {...this.props}
@@ -49,14 +49,14 @@ const Item = ({data, toggleDone, toggleMode, removeTodo}) => {
                    onChange={() => toggleDone(data.id)}
             />
 
-            <div className="category-list__short-info">
-                <span className="category-list__task-name">{data.taskName}</span>
-                <span className="category-list__task-text">{data.taskText}</span>
+            <div className="task-list__short-info">
+                <span className="task-list__task-name">{data.taskName}</span>
+                <span className="task-list__task-text">{data.taskText}</span>
             </div>
 
-            <div className="category-list__control">
-                <button className="category-list__edit" onClick={toggleMode}>EDIT</button>
-                <button className="category-list__dell" onClick={deleteTask}>DELL</button>
+            <div className="task-list__control">
+                <button className="task-list__edit" onClick={toggleMode}>EDIT</button>
+                <button className="task-list__dell" onClick={deleteTask}>DELL</button>
             </div>
         </Fragment>
     )
@@ -92,9 +92,9 @@ const EditItem = ({data, saveItem, toggleMode, saveTodo}) => {
                    defaultValue={data.taskText}
             />
 
-            <div className="category-list__control">
-                <button className="category-list__edit" onClick={onSave}> Save</button>
-                <button className="category-list__dell" onClick={toggleMode}> Cansel</button>
+            <div className="task-list__control">
+                <button className="task-list__edit" onClick={onSave}> Save</button>
+                <button className="task-list__dell" onClick={toggleMode}> Cansel</button>
             </div>
         </Fragment>
     )

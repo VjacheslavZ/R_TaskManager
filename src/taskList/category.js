@@ -2,22 +2,22 @@ import React from 'react';
 import {map, filter} from 'lodash';
 import {Switch, Route} from 'react-router-dom';
 
-import {List} from './categoryList'
+import {List} from './taskListItem'
 
-export const ContentList = (props) => {
+export const TaskList = (props) => {
     return (
-        <div className="category-list">
+        <div className="task-list">
             <span> Tasks</span>
             <Switch>
                 <Route path='/:category' component={(route) => (
-                    <Tasks {...props} {...route} />
+                    <TasksList {...props} {...route} />
                 )}/>
             </Switch>
         </div>
     );
 };
 
-const Tasks = (props) => {
+const TasksList = (props) => {
     const {dataList, toggleDone, saveTodo, removeTodo} = props;
     const locUrl = props.location.pathname;
     const sortedCategory = [];
@@ -29,7 +29,7 @@ const Tasks = (props) => {
     });
 
     return (
-        <ul className="category-list__todo">
+        <ul className="task-list__todo">
             {
                 sortedCategory.length ?
                     map(sortedCategory, task => (

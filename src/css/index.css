@@ -192,14 +192,14 @@ body {
     border-bottom: 1px solid gray;
     display: block; }
 
-.category-list {
+.task-list {
     width: 70%;
     height: 100%;
     min-height: 400px;
     height: 100%;
     text-align: center;
     border-left: 1px solid gray; }
-.category-list span {
+.task-list span {
     border-bottom: 1px solid gray;
     display: block; }
 
@@ -236,7 +236,7 @@ body {
     max-height: 0;
     -webkit-transition: all 0.5s ease-out; }
 
-.category-list__todo {
+.task-list__todo {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -249,7 +249,7 @@ body {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column; }
-.category-list__todo li {
+.task-list__todo li {
     width: 95%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -267,7 +267,7 @@ body {
     flex-direction: column;
     margin: 0 auto; }
 
-.category-list__info {
+.task-list__info {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -278,7 +278,7 @@ body {
     justify-content: space-between;
     width: 100%; }
 
-.category-list__short-info {
+.task-list__short-info {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -290,13 +290,13 @@ body {
     flex-direction: column;
     width: 70%; }
 
-.category-list__task-name {
+.task-list__task-name {
     color: #F3FD00; }
 
-.category-list__task-text {
+.task-list__task-text {
     color: #fff; }
 
-.category-list__control {
+.task-list__control {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -306,7 +306,7 @@ body {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column; }
-.category-list__control button {
+.task-list__control button {
     background-color: transparent;
     border: none;
     height: 25px;
@@ -315,18 +315,18 @@ body {
     -webkit-transition: background-color .3s ease;
     -o-transition: background-color .3s ease;
     transition: background-color .3s ease; }
-.category-list__control button + button {
+.task-list__control button + button {
     margin-top: 6px; }
-.category-list__control .category-list__edit {
+.task-list__control .task-list__edit {
     background-color: #F7FE40; }
-.category-list__control .category-list__edit:hover {
+.task-list__control .task-list__edit:hover {
     background-color: #b7be01; }
-.category-list__control .category-list__dell {
+.task-list__control .task-list__dell {
     background-color: #9EA400; }
-.category-list__control .category-list__dell:hover {
+.task-list__control .task-list__dell:hover {
     background-color: #3c3e00; }
 
-.category-list__full-desc textarea {
+.task-list__full-desc textarea {
     resize: vertical;
     height: 0;
     opacity: 0;
@@ -338,7 +338,7 @@ body {
     -o-transition: height .3s ease;
     transition: height .3s ease; }
 
-.category-list__todo li:hover textarea {
+.task-list__todo li:hover textarea {
     height: 70px;
     opacity: 1;
     visibility: visible; }
