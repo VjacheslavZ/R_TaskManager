@@ -2,11 +2,14 @@ import React, {Component} from 'react';
 import { TaskList } from '../taskList/category';
 import { Sidebar } from '../sidebar';
 
+
 import { sidebarConnector } from '../sidebar/connector';
-import { contentConnector } from '../content/connector'
+import { contentConnector } from '../connector/connector'
+
 
 const MySidebar = sidebarConnector(Sidebar);
 const MyContentList = contentConnector(TaskList);
+
 
 class Root extends Component {
     render(){
@@ -19,8 +22,7 @@ class Root extends Component {
                             <span>Progress</span>
 
                             <div className="myProgress">
-                                <div className="myBar">
-                                </div>
+                                <div className="myBar"></div>
                             </div>
 
 
@@ -40,5 +42,6 @@ class Root extends Component {
         )
     }
 }
+
 
 export default Root;

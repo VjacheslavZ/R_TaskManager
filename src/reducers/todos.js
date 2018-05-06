@@ -92,7 +92,6 @@ export const todos = function (state = initialState, action) {
             return state;
         }
     }
-
 };
 
 const getUpdatedListItem = (list, id, updatedItem) => Object.assign({}, list[id], updatedItem);

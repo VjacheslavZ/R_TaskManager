@@ -1,6 +1,7 @@
 import React from 'react';
 import { CategoryList } from './category-list';
 
+
 export const Sidebar = ({ categories, selectCategory }) => {
     return (
         <div>

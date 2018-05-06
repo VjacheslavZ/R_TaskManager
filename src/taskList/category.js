@@ -1,8 +1,8 @@
 import React from 'react';
 import {map, filter} from 'lodash';
 import {Switch, Route} from 'react-router-dom';
-
 import {List} from './taskListItem'
+
 
 export const TaskList = (props) => {
     return (
@@ -16,6 +16,7 @@ export const TaskList = (props) => {
         </div>
     );
 };
+
 
 const TasksList = (props) => {
     const {dataList, toggleDone, saveTodo, removeTodo} = props;

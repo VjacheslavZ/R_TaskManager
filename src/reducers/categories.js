@@ -1,5 +1,6 @@
 import * as constants from '../actions/constants';
 
+
 const initialState = {
     list: {
         1:
@@ -53,6 +54,7 @@ const initialState = {
     },
     selectedCategory: 1
 };
+
 
 export const categories = function (state = initialState, action) {
     const { type, payload } = action;

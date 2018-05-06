@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from  'react-router-dom';
 import { CategoryList } from './category-list';
 
+
 export const CategoryItem = ({ category, categories, selectCat, url}) => {
     return (
         <li>
