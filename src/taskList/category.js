@@ -2,7 +2,7 @@ import React from 'react';
 import {map, filter} from 'lodash';
 import {Switch, Route} from 'react-router-dom';
 
-import {List} from '../categoryList/categoryList'
+import {List} from './categoryList'
 
 export const ContentList = (props) => {
     return (
