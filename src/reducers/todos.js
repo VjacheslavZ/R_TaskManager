@@ -73,6 +73,20 @@ export const todos = function (state = initialState, action) {
                 items: modifiedItemList
             });
         }
+        case constants.TODO_REMOVE: {
+            const id = payload;
+            const modifiedItem = state.items;
+
+            delete modifiedItem[id];
+
+            const modifiedItemList = Object.assign({}, state.items, {
+                [id]: modifiedItem
+            });
+
+            return Object.assign({}, state, {
+                items: modifiedItemList
+            })
+        }
     }
 
     return state;

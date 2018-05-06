@@ -18,7 +18,7 @@ export const ContentList = (props) => {
 };
 
 const Tasks = (props) => {
-    const {dataList, toggleDone, saveTodo} = props;
+    const {dataList, toggleDone, saveTodo, removeTodo} = props;
     const locUrl = props.location.pathname;
     const sortedCategory = [];
 
@@ -27,6 +27,7 @@ const Tasks = (props) => {
             sortedCategory.push(task)
         }
     });
+
     return (
         <ul className="category-list__todo">
             {
@@ -35,7 +36,8 @@ const Tasks = (props) => {
                             <List data={task}
                                   key={task.id}
                                   toggleDone={toggleDone}
-                                  saveTodo={saveTodo}/>
+                                  saveTodo={saveTodo}
+                                  removeTodo={removeTodo}/>
                         )
                     )
                     :

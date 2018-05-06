@@ -35,24 +35,32 @@ export class List extends PureComponent {
     }
 }
 
-const Item = ({data, toggleDone, toggleMode}) => (
-    <Fragment>
-        <input type="checkbox"
-               defaultChecked={data.isDone}
-               onChange={() => toggleDone(data.id)}
-        />
+const Item = ({data, toggleDone, toggleMode, removeTodo}) => {
+    const deleteTask = () =>{
+        const {id} = data;
 
-        <div className="category-list__short-info">
-            <span className="category-list__task-name">{data.taskName}</span>
-            <span className="category-list__task-text">{data.taskText}</span>
-        </div>
+        removeTodo(id)
+    };
 
-        <div className="category-list__control">
-            <button className="category-list__edit" onClick={toggleMode}>EDIT</button>
-            <button className="category-list__dell">DELL</button>
-        </div>
-    </Fragment>
-);
+    return(
+        <Fragment>
+            <input type="checkbox"
+                   defaultChecked={data.isDone}
+                   onChange={() => toggleDone(data.id)}
+            />
+
+            <div className="category-list__short-info">
+                <span className="category-list__task-name">{data.taskName}</span>
+                <span className="category-list__task-text">{data.taskText}</span>
+            </div>
+
+            <div className="category-list__control">
+                <button className="category-list__edit" onClick={toggleMode}>EDIT</button>
+                <button className="category-list__dell" onClick={deleteTask}>DELL</button>
+            </div>
+        </Fragment>
+    )
+};
 
 const EditItem = ({data, saveItem, toggleMode, saveTodo}) => {
     let taskName = null;

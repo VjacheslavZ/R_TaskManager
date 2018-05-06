@@ -1,8 +1,7 @@
 import { connect } from 'react-redux'
-import { toggleDone, saveTodo } from '../actions'
+import { toggleDone, saveTodo, removeTodo } from '../actions'
 
 export const mapStateToProps = (state) => {
-    console.log(state);
     return {
         dataList: state.todos.items,
         selectCatId: state.categories.selectedCategory
@@ -11,7 +10,8 @@ export const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     toggleDone,
-    saveTodo
+    saveTodo,
+    removeTodo
 };
 
 export const contentConnector = connect(mapStateToProps, mapDispatchToProps);
