@@ -87,9 +87,12 @@ export const todos = function (state = initialState, action) {
                 items: modifiedItemList
             })
         }
+
+        default: {
+            return state;
+        }
     }
 
-    return state;
 };
 
 const getUpdatedListItem = (list, id, updatedItem) => Object.assign({}, list[id], updatedItem);

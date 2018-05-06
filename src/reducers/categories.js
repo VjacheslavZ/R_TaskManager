@@ -61,8 +61,9 @@ export const categories = function (state = initialState, action) {
         case constants.CATEGORY_SELECT:
             return Object.assign({}, state, {
                 selectedCategory: payload
-            })
+            });
+        default: {
+            return state;
+        }
     }
-
-    return state;
 };
