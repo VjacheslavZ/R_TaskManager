@@ -1,7 +1,7 @@
 import React, {PureComponent, Fragment} from 'react';
 
-export class List extends PureComponent{
-    constructor(){
+export class List extends PureComponent {
+    constructor() {
         super();
         this.state = {
             editMode: false
@@ -15,19 +15,19 @@ export class List extends PureComponent{
         })
     }
 
-    render(){
+    render() {
         const {editMode} = this.state;
         const {toggleMode} = this;
 
-        return(
+        return (
             <li>
                 <div className="category-list__info">
                     {
                         editMode
                             ? <EditItem {...this.props}
-                                        toggleMode={ toggleMode }/>
+                                        toggleMode={toggleMode}/>
                             : <Item {...this.props}
-                                    toggleMode={ toggleMode }/>
+                                    toggleMode={toggleMode}/>
                     }
                 </div>
             </li>
@@ -38,8 +38,8 @@ export class List extends PureComponent{
 const Item = ({data, toggleDone, toggleMode}) => (
     <Fragment>
         <input type="checkbox"
-            defaultChecked={data.isDone}
-            onChange={ () => toggleDone(data.id) }
+               defaultChecked={data.isDone}
+               onChange={() => toggleDone(data.id)}
         />
 
         <div className="category-list__short-info">
@@ -48,7 +48,7 @@ const Item = ({data, toggleDone, toggleMode}) => (
         </div>
 
         <div className="category-list__control">
-            <button className="category-list__edit" onClick={ toggleMode }>EDIT</button>
+            <button className="category-list__edit" onClick={toggleMode}>EDIT</button>
             <button className="category-list__dell">DELL</button>
         </div>
     </Fragment>
@@ -59,30 +59,34 @@ const EditItem = ({data, saveItem, toggleMode, saveTodo}) => {
     let taskText = null;
 
     const onSave = () => {
-        const { id } = data;
+        const {id} = data;
         const newTaskText = taskText.value;
         const newTaskName = taskName.value;
 
-        saveTodo({ id, newTaskName, newTaskText });
+        saveTodo({id, newTaskName, newTaskText});
 
         toggleMode();
     };
 
-    return(
+    return (
         <Fragment>
             <input type="text"
-                   ref={ input => { taskName = input; } }
-                   defaultValue={ data.taskName }
+                   ref={input => {
+                       taskName = input;
+                   }}
+                   defaultValue={data.taskName}
             />
 
             <input type="text"
-                   ref={ input => { taskText = input; } }
-                   defaultValue={ data.taskText }
+                   ref={input => {
+                       taskText = input;
+                   }}
+                   defaultValue={data.taskText}
             />
 
             <div className="category-list__control">
-                <button className="category-list__edit" onClick={ onSave }> Save </button>
-                <button className="category-list__dell" onClick={ toggleMode }> Cansel </button>
+                <button className="category-list__edit" onClick={onSave}> Save</button>
+                <button className="category-list__dell" onClick={toggleMode}> Cansel</button>
             </div>
         </Fragment>
     )
