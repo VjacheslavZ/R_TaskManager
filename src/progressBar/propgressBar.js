@@ -4,8 +4,6 @@ import {filter} from 'lodash';
 
 
 export const ProgressBar = (props) => {
-    const { dataList } = props;
-
     return(
         <Switch>
             <Route path='/' component={(route) => (
@@ -35,9 +33,9 @@ const Progress = (props) => {
         }
     });
 
-    const progress = (100/statusTasks.length) * statusTasksDone.length;
+    const progress = Math.floor( (100/statusTasks.length) * statusTasksDone.length );
 
-    let style = {
+    const style = {
         width: progress + "%"
     };
 
