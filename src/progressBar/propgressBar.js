@@ -11,13 +11,11 @@ export const ProgressBar = (props) => {
             )}>
             </Route>
         </Switch>
-
     )
 };
 
 
 const Progress = (props) => {
-
     const url = props.location.pathname;
     const tasks = props.dataList;
     const statusTasks = [];
