@@ -1,4 +1,4 @@
-import React, {PureComponent, Fragment} from 'react';
+import React, {PureComponent, Fragment, ReactDOM} from 'react';
 
 
 export class List extends PureComponent {
@@ -65,7 +65,7 @@ const Item = ({data, toggleDone, toggleMode, removeTodo}) => {
 };
 
 
-const EditItem = ({data, saveItem, toggleMode, saveTodo}) => {
+const EditItem = ({data, toggleMode, saveTodo}) => {
     let taskName = null;
     let taskText = null;
 
