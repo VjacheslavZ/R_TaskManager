@@ -9,9 +9,12 @@ export const TaskList = (props) => {
         <div className="task-list">
             <div className="task-list__add-new">
                 <span>Add new task</span>
-                <div className='task-list__add-inputs'>
-                    <input type="text" className='task-name' name='task-name' placeholder='Task name'/>
-                    <input type="text" className='task-description' name='task-description' placeholder='Task description'/>
+                <div>
+                    <form action="" className='task-list__add-inputs'>
+                        <input type="text" className='task-name' name='task-name' placeholder='Task name'/>
+                        <input type="text" className='task-description' name='task-description' placeholder='Task description'/>
+                        <button type="submit">OK</button>
+                    </form>
                 </div>
             </div>
             <span> Tasks</span>

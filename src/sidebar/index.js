@@ -7,7 +7,10 @@ export const Sidebar = ({ categories, selectCategory }) => {
         <div>
             <div className='category-section__new-category'>
                 <span>Add new category</span>
-                <input type="text" placeholder='category name'/>
+                <form action="category-section__new-category">
+                    <input type="text" placeholder='category name'/>
+                    <button type="submit">OK</button>
+                </form>
             </div>
             <span>Categories</span>
             <CategoryList categories={ categories }

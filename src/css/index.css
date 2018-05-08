@@ -371,6 +371,17 @@ body {
     flex-direction: column;
     border-bottom: 1px solid #808080;
 }
+.category-section__new-category > form {
+    display: flex;
+}
+
+.category-section__new-category > form button {
+    border: none;
+    border-radius: 4px;
+    margin-left: 3px;
+    height: 36px;
+}
+
 .category-section__new-category span {
     border-bottom: none;
 }
@@ -411,6 +422,17 @@ body {
     justify-content: space-between;
 }
 
+.task-list__add-inputs button {
+    border: none;
+    border-radius: 4px;
+    margin-left: 3px;
+    height: 36px;
+}
+
 .task-description {
     width: 390px;
+    margin-left: 3px;
 }
+
+
+
