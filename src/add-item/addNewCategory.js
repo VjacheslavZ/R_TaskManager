@@ -3,14 +3,31 @@ import {Input} from "../formElements/input";
 
 
 export const AddNewCategory = (props) => {
+    const { name, onAdd, onNameChange} = props;
+
+    const onSubmit = (ev) => {
+        ev.preventDefault();
+
+        if(name){
+            return onAdd(name);
+        }
+    };
+
+    const onChange = (ev) => {
+        onNameChange(ev.target.value);
+    };
+
     return(
         <div className='category-section__new-category'>
             <span>Add new category</span>
-            <form action="category-section__new-category">
+            <form action="category-section__new-category" onSubmit={ onSubmit }>
 
-                <Input type="text"
-                       placeholder='category name'
-                       name='category-name'/>
+                <input
+                    type='text'
+                    placeholder='category name'
+                    onChange={ onChange }
+                    value={ name }
+                />
 
                 <button type="submit">OK</button>
             </form>
