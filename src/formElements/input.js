@@ -1,4 +1,4 @@
-import React,{ Fragment } from 'react';
+import React from 'react';
 
 export const Input = (props) => {
     const {type, className, name, placeholder} = props;

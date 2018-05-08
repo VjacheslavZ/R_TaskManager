@@ -1,17 +1,22 @@
 import { connect } from 'react-redux';
-import { selectCategory, addCategory, addCategoryChange } from '../actions';
+import { selectCategory,
+         addCategory,
+         addCategoryChange } from '../actions';
 
 
-const mapStateToProps = (state) => {
+export const sidebarConnector = connect((state) => {
     return {
         categories: state.categories.list,
-    };
-};
+    }
+    },{
+        selectCategory
+});
 
+export const addCategoryConnector = connect(
+    (state) => ({name: state.addCategory.text}),
 
-const mapDispatchToProps = {
-    selectCategory
-};
+    {
+        onAdd:addCategory,
+        onNameChange: addCategoryChange
+});
 
-
-export const sidebarConnector = connect(mapStateToProps, mapDispatchToProps);

@@ -1,4 +1,4 @@
-import React, {PureComponent, Fragment, ReactDOM} from 'react';
+import React, {PureComponent, Fragment} from 'react';
 
 
 export class List extends PureComponent {
