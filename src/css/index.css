@@ -187,7 +187,9 @@ body {
     border-right: 1px solid gray;
     text-align: center;
     border-botoom: 1px solid gray;
-    display: block; }
+    display: block;
+    overflow: hidden;
+}
 .category-section span {
     border-bottom: 1px solid gray;
     display: block; }
@@ -362,4 +364,53 @@ body {
 
 .category-section__menu li ul{
     margin-left: 10px;
+}
+
+.category-section__new-category {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #808080;
+}
+.category-section__new-category span {
+    border-bottom: none;
+}
+.category-section__new-category input {
+    border: 1px solid #808080;
+    margin-top: 0;
+    margin-bottom: 3px;
+    background: #808080;
+    width: 102%;
+    margin-left: -11px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.task-list__add-new {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid #808080;
+}
+
+.task-list__add-new span{
+    border-bottom: none;
+}
+.task-list__add-new input {
+    border: 1px solid #808080;
+    margin-top: 0;
+    margin-bottom: 3px;
+    background: #808080;
+    cursor: pointer;
+    color: #fff;
+}
+
+.task-list__add-inputs {
+    padding: 0 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.task-description {
+    width: 390px;
 }

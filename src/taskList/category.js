@@ -7,7 +7,15 @@ import {List} from './taskListItem'
 export const TaskList = (props) => {
     return (
         <div className="task-list">
+            <div className="task-list__add-new">
+                <span>Add new task</span>
+                <div className='task-list__add-inputs'>
+                    <input type="text" className='task-name' name='task-name' placeholder='Task name'/>
+                    <input type="text" className='task-description' name='task-description' placeholder='Task description'/>
+                </div>
+            </div>
             <span> Tasks</span>
+
             <Switch>
                 <Route path='/' component={(route) => (
                     <TasksList {...props} {...route} />
