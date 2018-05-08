@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { selectCategory } from '../actions';
+import { selectCategory, addCategory, addCategoryChange } from '../actions';
 
 
 const mapStateToProps = (state) => {

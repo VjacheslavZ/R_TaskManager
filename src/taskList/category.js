@@ -1,7 +1,9 @@
 import React from 'react';
 import {map, filter} from 'lodash';
 import {Switch, Route} from 'react-router-dom';
-import {List} from './taskListItem'
+
+import {List} from './taskListItem';
+import { AddNewTask } from '../add-item/addNewTask';
 
 
 export const TaskList = (props) => {
@@ -9,16 +11,10 @@ export const TaskList = (props) => {
         <div className="task-list">
             <div className="task-list__add-new">
                 <span>Add new task</span>
-                <div>
-                    <form action="" className='task-list__add-inputs'>
-                        <input type="text" className='task-name' name='task-name' placeholder='Task name'/>
-                        <input type="text" className='task-description' name='task-description' placeholder='Task description'/>
-                        <button type="submit">OK</button>
-                    </form>
-                </div>
+                <AddNewTask/>
             </div>
-            <span> Tasks</span>
 
+            <span>Tasks</span>
             <Switch>
                 <Route path='/' component={(route) => (
                     <TasksList {...props} {...route} />

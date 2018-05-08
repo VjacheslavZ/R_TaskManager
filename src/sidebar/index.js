@@ -1,17 +1,12 @@
 import React from 'react';
 import { CategoryList } from './category-list';
+import { AddNewCategory } from "../add-item/addNewCategory";
 
 
 export const Sidebar = ({ categories, selectCategory }) => {
     return (
         <div>
-            <div className='category-section__new-category'>
-                <span>Add new category</span>
-                <form action="category-section__new-category">
-                    <input type="text" placeholder='category name'/>
-                    <button type="submit">OK</button>
-                </form>
-            </div>
+            <AddNewCategory/>
             <span>Categories</span>
             <CategoryList categories={ categories }
                           parentId={ null }
