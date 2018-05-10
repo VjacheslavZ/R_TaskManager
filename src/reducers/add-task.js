@@ -21,10 +21,8 @@ export const addNewTask = function (state = initialState, action) {
             });
         }
 
-        case constants.TASK_ADD: {
-            return initialState;
-        }
-
+        case constants.TASK_ADD:
+            // return initialState;
         default: {
             return state;
         }

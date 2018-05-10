@@ -1,12 +1,13 @@
 import React from 'react';
-import {Input} from "../formElements/input";
-
 
 export const AddNewTask = (props) => {
 
-    const {taskName, taskText, category, onAddTask, addNewTaskNameChange, addNewTaskDescChange} = props;
-    
-    console.log(props);
+    const { taskName,
+            taskText,
+            category,
+            onAddTask,
+            addNewTaskNameChange,
+            addNewTaskDescChange} = props;
 
     const onSubmit = (ev) => {
         ev.preventDefault();
@@ -41,8 +42,6 @@ export const AddNewTask = (props) => {
                     placeholder='Task name'
                     value={ taskText }
                     onChange={ onChangeDesc }
-
-
                 />
 
                 <button type="submit">OK</button>

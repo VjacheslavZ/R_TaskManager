@@ -44,7 +44,7 @@ const initialState = {
 
 export const todos = function (state = initialState, action) {
     const {type, payload} = action;
-
+    console.log(payload)
     switch (type) {
         case constants.TODO_DONE_TOGGLE: {
             const id = payload;
@@ -87,7 +87,7 @@ export const todos = function (state = initialState, action) {
                 items: modifiedItemList
             })
         }
-
+        
         default: {
             return state;
         }
