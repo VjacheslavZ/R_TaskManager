@@ -6,17 +6,14 @@ export const AddNewTask = (props) => {
             onAddTask,
             addNewTaskNameChange,
             addNewTaskDescChange,
+            url
             } = props;
-
-    const currentUrl = props.location.pathname;
-
 
     const onSubmit = (ev) => {
         ev.preventDefault();
 
-        return onAddTask({taskName, taskText, currentUrl})
+        return onAddTask({taskName, taskText, url})
     };
-
     const onChangeName = (ev) => {
         addNewTaskNameChange(ev.target.value);
     };

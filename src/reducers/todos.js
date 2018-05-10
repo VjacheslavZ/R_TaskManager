@@ -1,7 +1,6 @@
 import * as constants from '../actions/constants';
 import { getNewId } from "../helpers";
 
-
 const initialState = {
     items: {
         1: {
@@ -41,7 +40,6 @@ const initialState = {
         }
     }
 };
-
 
 export const todos = function (state = initialState, action) {
     const {type, payload} = action;
@@ -88,9 +86,8 @@ export const todos = function (state = initialState, action) {
                 items: modifiedItemList
             })
         }
-
         case constants.TASK_ADD: {
-            const {taskName, taskText, currentUrl} = payload;
+            const {taskName, taskText, url} = payload;
 
             const lastId = getNewId(state.items);
 
@@ -98,8 +95,8 @@ export const todos = function (state = initialState, action) {
                 id: lastId,
                 taskName: taskName,
                 taskText: taskText,
-                category: currentUrl,
-                "isDone": false, // TODO FIX IT
+                category: url,
+                isDone: false, // TODO add date piker
             };
 
             const updatedList = Object.assign({}, state.items,{
@@ -119,9 +116,3 @@ export const todos = function (state = initialState, action) {
 
 const getUpdatedListItem = (list, id, updatedItem) => Object.assign({}, list[id], updatedItem);
 
-/*
-function getNewId(list) {
-    const ids = map(list, item => item.id)
-
-    return ids[ids.length - 1] + 1;
-}*/

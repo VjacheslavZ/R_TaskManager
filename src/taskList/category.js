@@ -17,7 +17,7 @@ export const TaskList = (props) => {
                 <span>Add new task</span>
 
                 <Route path='/' component={(route) => (
-                    <MyAddNewTask {...route}/>
+                    <MyAddNewTask url={route.location.pathname}/>
                 )}/>
             </div>
 
