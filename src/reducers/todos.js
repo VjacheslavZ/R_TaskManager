@@ -1,4 +1,5 @@
 import * as constants from '../actions/constants';
+import { getNewId } from "../helpers";
 
 
 const initialState = {
@@ -44,7 +45,7 @@ const initialState = {
 
 export const todos = function (state = initialState, action) {
     const {type, payload} = action;
-    console.log(payload)
+
     switch (type) {
         case constants.TODO_DONE_TOGGLE: {
             const id = payload;
@@ -87,6 +88,21 @@ export const todos = function (state = initialState, action) {
                 items: modifiedItemList
             })
         }
+
+        case constants.TASK_ADD: {
+            const {taskName, taskDesc} = payload;
+
+            const lastId = getNewId(state.items);
+
+            const newItem = {
+                id: lastId,
+                taskName: taskName,
+                taskText: taskText
+
+            }
+
+
+        }
         
         default: {
             return state;
@@ -95,3 +111,10 @@ export const todos = function (state = initialState, action) {
 };
 
 const getUpdatedListItem = (list, id, updatedItem) => Object.assign({}, list[id], updatedItem);
+
+/*
+function getNewId(list) {
+    const ids = map(list, item => item.id)
+
+    return ids[ids.length - 1] + 1;
+}*/

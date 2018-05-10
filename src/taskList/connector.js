@@ -6,8 +6,8 @@ import { addNewTask,
 
 export const addNewTaskConnector = connect(
     (state) => ({
-        taskName: state.addNewTask.text,/*to props*/
-        taskText: state.addNewTask.text,
+        taskName: state.addNewTask.taskName,/*to props*/
+        taskDesc: state.addNewTask.taskDesc,
         category: "/react",
     }),{
         onAddTask: addNewTask,

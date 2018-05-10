@@ -1,5 +1,5 @@
 import * as constants from '../actions/constants';
-import { map } from 'lodash'
+import { getNewId } from "../helpers";
 
 
 const initialState = {
@@ -88,10 +88,3 @@ export const categories = function (state = initialState, action) {
         }
     }
 };
-
-
-function getNewId(list) {
-    const ids = map(list, item => item.id);
-
-    return ids[ids.length - 1] + 1;
-}

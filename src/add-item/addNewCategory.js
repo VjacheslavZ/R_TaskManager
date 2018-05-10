@@ -3,8 +3,6 @@ import React from 'react'
 
 export const AddNewCategory = (props) => {
     const { name, onAdd, onNameChange} = props;
-    
-    console.log(name)
 
     const onSubmit = (ev) => {
         ev.preventDefault();

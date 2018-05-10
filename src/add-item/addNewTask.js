@@ -3,8 +3,7 @@ import React from 'react';
 export const AddNewTask = (props) => {
 
     const { taskName,
-            taskText,
-            category,
+            taskDesc,
             onAddTask,
             addNewTaskNameChange,
             addNewTaskDescChange} = props;
@@ -12,7 +11,7 @@ export const AddNewTask = (props) => {
     const onSubmit = (ev) => {
         ev.preventDefault();
 
-        onAddTask({taskName, taskText})
+        return onAddTask({taskName, taskDesc})
     };
 
     const onChangeName = (ev) => {
@@ -40,7 +39,7 @@ export const AddNewTask = (props) => {
                     className='task-description'
                     name='task-description'
                     placeholder='Task name'
-                    value={ taskText }
+                    value={ taskDesc }
                     onChange={ onChangeDesc }
                 />
 

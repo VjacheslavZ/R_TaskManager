@@ -7,7 +7,7 @@ const initialState = {
 
 export const addNewTask = function (state = initialState, action) {
     const {type, payload} = action;
-    console.log(action)
+
     switch (type) {
         case constants.TASK_ADD_NAME_CHANGE: {
             return Object.assign({}, state, {
@@ -22,7 +22,8 @@ export const addNewTask = function (state = initialState, action) {
         }
 
         case constants.TASK_ADD:
-            // return initialState;
+            return initialState;
+
         default: {
             return state;
         }

@@ -5,7 +5,6 @@ import { selectCategory,
 
 
 export const sidebarConnector = connect((state) => {
-    console.log(state)
     return {
         categories: state.categories.list,
     }
