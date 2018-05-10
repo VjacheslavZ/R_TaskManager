@@ -7,7 +7,7 @@ import { AddNewTask } from '../add-item/addNewTask';
 
 import {addNewTaskConnector} from "./connector";
 
-const MyAddNewTask = addNewTaskConnector(AddNewTask)
+const MyAddNewTask = addNewTaskConnector(AddNewTask);
 
 export const TaskList = (props) => {
     return (

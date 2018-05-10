@@ -1,9 +1,10 @@
 import React from 'react'
-import {Input} from "../formElements/input";
 
 
 export const AddNewCategory = (props) => {
     const { name, onAdd, onNameChange} = props;
+    
+    console.log(name)
 
     const onSubmit = (ev) => {
         ev.preventDefault();
@@ -33,5 +34,5 @@ export const AddNewCategory = (props) => {
             </form>
         </div>
     )
-}
+};
 

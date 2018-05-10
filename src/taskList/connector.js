@@ -1,12 +1,16 @@
 import { connect } from 'react-redux';
-import { addNewTask } from '../actions';
+import { addNewTask,
+         addNewTaskNameChange,
+         addNewTaskDescChange } from '../actions';
 
 
 export const addNewTaskConnector = connect(
     (state) => ({
-        taskName: state.addNewTask.taskName,
-        taskText: state.addNewTask.taskText,
+        taskName: state.addNewTask.text,/*to props*/
+        taskText: state.addNewTask.text,
         category: "/react",
     }),{
-        onAddTask: addNewTask
+        onAddTask: addNewTask,
+        addNewTaskNameChange: addNewTaskNameChange,
+        addNewTaskDescChange: addNewTaskDescChange
 });

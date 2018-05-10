@@ -12,3 +12,5 @@ export const addCategory = createAction(constants.CATEGORY_ADD);
 export const addCategoryChange = createAction(constants.CATEGORY_ADD_CHANGE);
 
 export const addNewTask = createAction(constants.TASK_ADD);
+export const addNewTaskNameChange = createAction(constants.TASK_ADD_NAME_CHANGE);
+export const addNewTaskDescChange = createAction(constants.TASK_ADD_DESC_CHANGE);

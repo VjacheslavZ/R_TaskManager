@@ -14,9 +14,8 @@ export const sidebarConnector = connect((state) => {
 
 export const addCategoryConnector = connect(
     (state) => ({name: state.addCategory.text}),
-
     {
-        onAdd:addCategory,
+        onAdd: addCategory,
         onNameChange: addCategoryChange
 });
 
