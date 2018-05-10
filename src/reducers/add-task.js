@@ -2,7 +2,7 @@ import * as constants from '../actions/constants';
 
 const initialState = {
     taskName: '',
-    taskDesc: '',
+    taskText: '',
 };
 
 export const addNewTask = function (state = initialState, action) {
@@ -17,7 +17,7 @@ export const addNewTask = function (state = initialState, action) {
 
         case constants.TASK_ADD_DESC_CHANGE: {
             return Object.assign({}, state, {
-                taskDesc: payload,
+                taskText: payload,
             });
         }
 
