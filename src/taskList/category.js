@@ -10,11 +10,15 @@ import {addNewTaskConnector} from "./connector";
 const MyAddNewTask = addNewTaskConnector(AddNewTask);
 
 export const TaskList = (props) => {
+
     return (
         <div className="task-list">
             <div className="task-list__add-new">
                 <span>Add new task</span>
-                <MyAddNewTask/>
+
+                <Route path='/' component={(route) => (
+                    <MyAddNewTask {...route}/>
+                )}/>
             </div>
 
             <span>Tasks</span>

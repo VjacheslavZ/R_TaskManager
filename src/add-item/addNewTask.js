@@ -1,17 +1,20 @@
 import React from 'react';
 
 export const AddNewTask = (props) => {
-
     const { taskName,
             taskText,
             onAddTask,
             addNewTaskNameChange,
-            addNewTaskDescChange} = props;
+            addNewTaskDescChange,
+            } = props;
+
+    const currentUrl = props.location.pathname;
+
 
     const onSubmit = (ev) => {
         ev.preventDefault();
 
-        return onAddTask({taskName, taskText})
+        return onAddTask({taskName, taskText, currentUrl})
     };
 
     const onChangeName = (ev) => {

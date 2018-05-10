@@ -90,7 +90,7 @@ export const todos = function (state = initialState, action) {
         }
 
         case constants.TASK_ADD: {
-            const {taskName, taskText} = payload;
+            const {taskName, taskText, currentUrl} = payload;
 
             const lastId = getNewId(state.items);
 
@@ -98,13 +98,13 @@ export const todos = function (state = initialState, action) {
                 id: lastId,
                 taskName: taskName,
                 taskText: taskText,
-                category: "/react", // TODO FIX IT
+                category: currentUrl,
                 "isDone": false, // TODO FIX IT
-            }
+            };
 
             const updatedList = Object.assign({}, state.items,{
                 [lastId]: newItem
-            })
+            });
 
             return Object.assign({}, state, {
                 items: updatedList
