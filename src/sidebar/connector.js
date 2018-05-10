@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { selectCategory,
          addCategory,
-         addCategoryChange } from '../actions';
+         addCategoryChange} from '../actions';
 
 
 export const sidebarConnector = connect((state) => {

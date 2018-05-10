@@ -5,3 +5,5 @@ export const TODO_REMOVE = 'TODO_REMOVE';
 
 export const CATEGORY_ADD = 'CATEGORY_ADD';
 export const CATEGORY_ADD_CHANGE = 'CATEGORY_ADD_CHANGE';
+
+export const TASK_ADD = 'TASK_ADD';

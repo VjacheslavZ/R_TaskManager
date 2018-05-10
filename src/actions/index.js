@@ -10,3 +10,5 @@ export const removeTodo = createAction(constants.TODO_REMOVE);
 
 export const addCategory = createAction(constants.CATEGORY_ADD);
 export const addCategoryChange = createAction(constants.CATEGORY_ADD_CHANGE);
+
+export const addNewTask = createAction(constants.TASK_ADD);

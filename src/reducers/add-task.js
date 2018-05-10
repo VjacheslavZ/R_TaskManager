@@ -4,20 +4,18 @@ const initialState = {
     text: '',
 };
 
-export const addCategory = function (state = initialState, action) {
-    const { type, payload } = action;
+export const addNewTask = function (state = initialState, action) {
+    const {type, payload} = action;
 
     switch (type) {
-        case constants.CATEGORY_ADD_CHANGE:
+        case (constants.TASK_ADD): {
             return Object.assign({}, state, {
                 text: payload,
             });
-
-        case constants.CATEGORY_ADD:
-            return initialState;
+        }
 
         default: {
             return state;
         }
     }
-};
+}

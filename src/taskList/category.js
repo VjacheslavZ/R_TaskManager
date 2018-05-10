@@ -5,13 +5,16 @@ import {Switch, Route} from 'react-router-dom';
 import {List} from './taskListItem';
 import { AddNewTask } from '../add-item/addNewTask';
 
+import {addNewTaskConnector} from "./connector";
+
+const MyAddNewTask = addNewTaskConnector(AddNewTask)
 
 export const TaskList = (props) => {
     return (
         <div className="task-list">
             <div className="task-list__add-new">
                 <span>Add new task</span>
-                <AddNewTask/>
+                <MyAddNewTask/>
             </div>
 
             <span>Tasks</span>

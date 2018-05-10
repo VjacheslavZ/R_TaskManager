@@ -72,7 +72,7 @@ export const categories = function (state = initialState, action) {
                 id: lastId,
                 name: payload,
                 parentId: null,
-                url: "/react", //todo get url;
+                url: payload
             };
 
             const updatedList = Object.assign({}, state.list, {
