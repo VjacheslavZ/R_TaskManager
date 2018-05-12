@@ -9,7 +9,7 @@ export const mapStateToProps = (state) => {
     };
 };
 
-
+/*ACTIONS*/
 const mapDispatchToProps = {
     toggleDone,
     saveTodo,
