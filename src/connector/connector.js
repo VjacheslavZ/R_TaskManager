@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { toggleDone, saveTodo, removeTodo } from '../actions'
 
-
+/*props to wrapped component*/
 export const mapStateToProps = (state) => {
     return {
         dataList: state.todos.items,
