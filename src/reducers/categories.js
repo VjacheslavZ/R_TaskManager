@@ -1,8 +1,8 @@
 import * as constants from '../actions/constants';
 import { getNewId } from "../helpers";
+import Immutable from 'immutable';
 
-
-const initialState = {
+const initialState = Immutable.fromJS({
     list: {
         1:
             {
@@ -54,8 +54,7 @@ const initialState = {
                 parentId: 6},
     },
     selectedCategory: 1
-};
-
+});
 
 export const categories = function (state = initialState, action) {
     const { type, payload } = action;
@@ -65,23 +64,25 @@ export const categories = function (state = initialState, action) {
             return Object.assign({}, state, {
                 selectedCategory: payload
             });
+            // return state.set('selectedCategory', payload);
         case constants.CATEGORY_ADD: {
-            const lastId = getNewId(state.list);
+            const id = getNewId(state.get('list').toJS());
 
-            const newItem = {
-                id: lastId,
-                name: payload,
-                parentId: null,
-                url: payload
-            };
+            return state.update(
+                'list',
+                value => {
+                    const newCategory = Immutable.Map({
+                        id,
+                        name: payload,
+                        // parentId: state.get('selectedCategory') || null,
+                        parentId: null,
+                        url: payload,
+                    });
 
-            const updatedList = Object.assign({}, state.list, {
-                [lastId]: newItem
-            });
+                    return value.set(id.toString(), newCategory)
+                }
+            );
 
-            return Object.assign({}, state, {
-                list: updatedList
-            });
         }
         default: {
             return state;

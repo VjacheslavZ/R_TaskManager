@@ -2,20 +2,31 @@ import { connect } from 'react-redux';
 import { selectCategory,
          addCategory,
          addCategoryChange} from '../actions';
+import { createSelector } from 'reselect';
+import { createImmutableSelector } from '../helpers';
 
+import {list, selectedCategory} from "../selectors/categories";
 
-export const sidebarConnector = connect((state) => {
-    return {
-        categories: state.categories.list,
-    }
-    },{
-        selectCategory
-});
+const sidebarSelector = createImmutableSelector(
+    [list, selectedCategory],
+    (list, selectedCategory) => (
+        {
+            categories: list.toJS(),
+            selectCategory : selectedCategory
+        }
+    )
+);
+
+export const sidebarConnector = connect(
+    sidebarSelector,
+    {selectCategory}
+);
 
 export const addCategoryConnector = connect(
     (state) => ({name: state.addCategory.text}),
     {
         onAdd: addCategory,
         onNameChange: addCategoryChange
-});
+    }
+);
 
