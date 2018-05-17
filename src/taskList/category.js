@@ -4,20 +4,22 @@ import {Switch, Route} from 'react-router-dom';
 
 import {List} from './taskListItem';
 import { AddNewTask } from '../add-item/addNewTask';
-
 import {addNewTaskConnector} from "./connector";
+import  { todoConnector} from "../connector/connector";
 
 const MyAddNewTask = addNewTaskConnector(AddNewTask);
+
+const Todo = todoConnector(List);
 
 export const TaskList = (props) => {
     return (
         <div className="task-list">
             <div className="task-list__add-new">
-                <span>Add new task</span>
+{/*                <span>Add new task</span>
 
                 <Route path='/' component={(route) => (
                     <MyAddNewTask url={route.location.pathname}/>
-                )}/>
+                )}/>*/}
             </div>
 
             <span>Tasks</span>
@@ -47,7 +49,7 @@ const TasksList = (props) => {
             {
                 sortedCategory.length ?
                     map(sortedCategory, task => (
-                            <List data={task}
+                            <Todo data={task}
                                   key={task.id}
                                   toggleDone={toggleDone}
                                   saveTodo={saveTodo}

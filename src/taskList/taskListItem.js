@@ -1,6 +1,5 @@
 import React, {PureComponent, Fragment} from 'react';
 
-
 export class List extends PureComponent {
     constructor() {
         super();
@@ -36,8 +35,8 @@ export class List extends PureComponent {
     }
 }
 
-
 const Item = ({data, toggleDone, toggleMode, removeTodo}) => {
+    // console.log(removeTodo)
     const deleteTask = () =>{
         const {id} = data;
 
@@ -63,7 +62,6 @@ const Item = ({data, toggleDone, toggleMode, removeTodo}) => {
         </Fragment>
     )
 };
-
 
 const EditItem = ({data, toggleMode, saveTodo}) => {
     let taskName = null;

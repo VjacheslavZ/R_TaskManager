@@ -3,9 +3,6 @@ import { itemsForSelectedCategory } from '../selectors';
 import { createConnectorForSelector } from '../helpers';
 import { createSelector } from 'reselect';
 
-
-import { connect } from 'react-redux'
-
 const contentSelector = createSelector(
     itemsForSelectedCategory,
     (todos) => ({
@@ -13,18 +10,39 @@ const contentSelector = createSelector(
     })
 );
 
-const taskListSelector = createSelector(
-
-);
-
 export const contentConnector = createConnectorForSelector(contentSelector);
-export const taskListConnector = createConnectorForSelector(contentSelector);
 
 export const todoConnector = createConnectorForSelector(null, {
     toggleDone,
     saveItem: saveTodo,
     deleteItem: removeTodo
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*const contentSelector = createSelector(
     itemsForSelectedCategory,
