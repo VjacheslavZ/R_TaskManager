@@ -1,8 +1,40 @@
-import { connect } from 'react-redux'
 import { toggleDone, saveTodo, removeTodo } from '../actions'
+import { itemsForSelectedCategory } from '../selectors';
+import { createConnectorForSelector } from '../helpers';
 import { createSelector } from 'reselect';
 
-/*props to wrapped component*/
+
+import { connect } from 'react-redux'
+
+const contentSelector = createSelector(
+    itemsForSelectedCategory,
+    (todos) => ({
+        todos: todos.toJS()
+    })
+);
+
+const taskListSelector = createSelector(
+
+);
+
+export const contentConnector = createConnectorForSelector(contentSelector);
+export const taskListConnector = createConnectorForSelector(contentSelector);
+
+export const todoConnector = createConnectorForSelector(null, {
+    toggleDone,
+    saveItem: saveTodo,
+    deleteItem: removeTodo
+});
+
+/*const contentSelector = createSelector(
+    itemsForSelectedCategory,
+    (todos) => ({
+        todos: todos.toJS()
+    })
+);*/
+
+/*
+/!*props to wrapped component*!/
 export const mapStateToProps = (state) => {
     return {
         dataList: state.todos.items,
@@ -10,12 +42,11 @@ export const mapStateToProps = (state) => {
     };
 };
 
-/*ACTIONS*/
+/!*ACTIONS*!/
 const mapDispatchToProps = {
     toggleDone,
     saveTodo,
     removeTodo
 };
 
-
-export const contentConnector = connect(mapStateToProps, mapDispatchToProps);
+export const contentConnector = connect(mapStateToProps, mapDispatchToProps);*/

@@ -8,6 +8,13 @@ export const createAction = type => (payload) => ({
     payload
 });
 
+export const createConnectorForSelector = (selector = null, actions = {}) =>
+    connect(
+        typeof selector === 'function'
+            ? (state) => selector(state)
+            : selector, actions
+    );
+
 export const createImmutableSelector = createSelectorCreator(defaultMemoize, Immutable.is);
 
 export const getNewId = function (list) {

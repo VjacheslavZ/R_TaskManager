@@ -64,7 +64,6 @@ export const categories = function (state = initialState, action) {
             return Object.assign({}, state, {
                 selectedCategory: payload
             });
-            // return state.set('selectedCategory', payload);
         case constants.CATEGORY_ADD: {
             const id = getNewId(state.get('list').toJS());
 

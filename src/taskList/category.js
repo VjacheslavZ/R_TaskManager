@@ -10,7 +10,6 @@ import {addNewTaskConnector} from "./connector";
 const MyAddNewTask = addNewTaskConnector(AddNewTask);
 
 export const TaskList = (props) => {
-
     return (
         <div className="task-list">
             <div className="task-list__add-new">
@@ -33,11 +32,11 @@ export const TaskList = (props) => {
 
 
 const TasksList = (props) => {
-    const {dataList, toggleDone, saveTodo, removeTodo} = props;
+    const {todos, toggleDone, saveTodo, removeTodo} = props;
     const locUrl = props.location.pathname;
     const sortedCategory = [];
 
-    filter(dataList, (task) => {
+    filter(todos, (task) => {
         if (task.category === locUrl) {
             sortedCategory.push(task)
         }

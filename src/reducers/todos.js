@@ -1,7 +1,9 @@
+import Immutable from 'immutable';
 import * as constants from '../actions/constants';
 import { getNewId } from "../helpers";
 
-const initialState = {
+
+const initialState = Immutable.fromJS({
     items: {
         1: {
             "id": 1,
@@ -39,14 +41,14 @@ const initialState = {
             "isDone": false
         }
     }
-};
+});
 
 export const todos = function (state = initialState, action) {
     const {type, payload} = action;
 
     switch (type) {
         case constants.TODO_DONE_TOGGLE: {
-            const id = payload;
+            /*const id = payload;
 
             const modifiedItem = getUpdatedListItem(state.items, id, {
                 isDone: !state.items[id].isDone
@@ -54,7 +56,14 @@ export const todos = function (state = initialState, action) {
 
             const modifiedItemList = Object.assign({}, state.items, {[id]: modifiedItem});
 
-            return Object.assign({}, state, {items: modifiedItemList});
+            return Object.assign({}, state, {items: modifiedItemList});*/
+
+
+            return state.updateIn(
+                ['items', `${payload}`, 'done'],
+                (done) => !done
+            )
+
         }
         case constants.TODO_SAVE: {
             const {id, newTaskText, newTaskName} = payload;
@@ -91,7 +100,7 @@ export const todos = function (state = initialState, action) {
 
             const lastId = getNewId(state.items);
 
-            const newItem = {
+/*            const newItem = {
                 id: lastId,
                 taskName: taskName,
                 taskText: taskText,
@@ -105,7 +114,7 @@ export const todos = function (state = initialState, action) {
 
             return Object.assign({}, state, {
                 items: updatedList
-            })
+            })*/
         }
         
         default: {
