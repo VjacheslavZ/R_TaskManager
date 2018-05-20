@@ -56,10 +56,15 @@ export const todos = function (state = initialState, action) {
         case constants.TODO_SAVE: {
             const {id, newTaskText, newTaskName} = payload;
 
+            const data = Immutable.Map({
+                taskName: newTaskName,
+            });
+
             return state.updateIn(
                 ['items', `${id}`, 'taskName'], () => newTaskName,
+                //todo add newTaskText
             )
-            //todo add newTaskText
+
         }
         case constants.TODO_REMOVE: {
             return state.deleteIn(['items', `${payload}`]);
@@ -67,6 +72,7 @@ export const todos = function (state = initialState, action) {
         case constants.TASK_ADD: {
             const {taskName, taskText, url} = payload;
             const lastId = getNewId(state.get('items').toJS());
+
             const newTask = Immutable.Map({
                 id: lastId,
                 taskName: taskName,
@@ -76,7 +82,7 @@ export const todos = function (state = initialState, action) {
 
             return state.update(
                 'items',
-                value => value.set(lastId.toString(), newTask)
+                value => value.set(lastId, newTask)
             )
         }
         
@@ -85,6 +91,4 @@ export const todos = function (state = initialState, action) {
         }
     }
 };
-
-const getUpdatedListItem = (list, id, updatedItem) => Object.assign({}, list[id], updatedItem);
 

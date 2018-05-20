@@ -17,7 +17,7 @@ export const ProgressBar = (props) => {
 
 const Progress = (props) => {
     const url = props.location.pathname;
-    const tasks = props.dataList;
+    const tasks = props.todos;
     const statusTasks = [];
     const statusTasksDone = [];
 
