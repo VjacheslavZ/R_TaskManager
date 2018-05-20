@@ -78,11 +78,12 @@ export const todos = function (state = initialState, action) {
                 taskName: taskName,
                 taskText: taskText,
                 category: url,
+                isDone: false
             });
 
             return state.update(
                 'items',
-                value => value.set(lastId, newTask)
+                value => value.set(lastId.toString(), newTask)
             )
         }
         
