@@ -15,11 +15,11 @@ export const TaskList = (props) => {
     return (
         <div className="task-list">
             <div className="task-list__add-new">
-{/*                <span>Add new task</span>
+                <span>Add new task</span>
 
                 <Route path='/' component={(route) => (
                     <MyAddNewTask url={route.location.pathname}/>
-                )}/>*/}
+                )}/>
             </div>
 
             <span>Tasks</span>
@@ -53,7 +53,7 @@ const TasksList = (props) => {
                             <Todo data={task}
                                   key={task.id}
                                     /*toggleDone={toggleDone}*/
-                                  saveTodo={saveTodo}
+                                    /*saveTodo={saveTodo}*/
                                   removeTodo={removeTodo}/>
                         )
                     )

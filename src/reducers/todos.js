@@ -48,63 +48,36 @@ export const todos = function (state = initialState, action) {
 
     switch (type) {
         case constants.TODO_DONE_TOGGLE: {
-
             return state.updateIn(
                 ['items', `${payload}`, 'isDone'],
                 (done) => !done
             )
-
         }
         case constants.TODO_SAVE: {
             const {id, newTaskText, newTaskName} = payload;
 
-            const modifiedItem = getUpdatedListItem(state.items, id, {
-                taskName: newTaskName,
-                taskText: newTaskText
-            });
-
-            const modifiedItemList = Object.assign({}, state.items, {
-                [id]: modifiedItem
-            });
-
-            return Object.assign({}, state, {
-                items: modifiedItemList
-            });
+            return state.updateIn(
+                ['items', `${id}`, 'taskName'], () => newTaskName,
+            )
+            //todo add newTaskText
         }
         case constants.TODO_REMOVE: {
-            const id = payload;
-            const modifiedItem = state.items;
-
-            delete modifiedItem[id];
-
-            const modifiedItemList = Object.assign({}, state.items, {
-                [id]: modifiedItem
-            });
-
-            return Object.assign({}, state, {
-                items: modifiedItemList
-            })
+            return state.deleteIn(['items', `${payload}`]);
         }
         case constants.TASK_ADD: {
             const {taskName, taskText, url} = payload;
-
-            const lastId = getNewId(state.items);
-
-/*            const newItem = {
+            const lastId = getNewId(state.get('items').toJS());
+            const newTask = Immutable.Map({
                 id: lastId,
                 taskName: taskName,
                 taskText: taskText,
                 category: url,
-                isDone: false, // TODO add date piker
-            };
-
-            const updatedList = Object.assign({}, state.items,{
-                [lastId]: newItem
             });
 
-            return Object.assign({}, state, {
-                items: updatedList
-            })*/
+            return state.update(
+                'items',
+                value => value.set(lastId.toString(), newTask)
+            )
         }
         
         default: {

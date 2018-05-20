@@ -14,8 +14,8 @@ export const contentConnector = createConnectorForSelector(contentSelector);
 
 export const todoConnector = createConnectorForSelector(null, {
     toggleDone,
-    saveItem: saveTodo,
-    deleteItem: removeTodo
+    saveTodo: saveTodo,
+    removeTodo: removeTodo
 });
 
 
