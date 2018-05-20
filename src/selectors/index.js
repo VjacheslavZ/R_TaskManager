@@ -8,12 +8,6 @@ const items = createImmutableSelector(
     todos => {return todos.get('items')}
 );
 
-const selectCatId = createImmutableSelector(
-    todos,
-    todos => {return todos.get('')}
-);
-
-/*selectCatId: state.categories.selectedCategory*/
 export const itemsForSelectedCategory = createImmutableSelector(
     [items, selectedCategory],
     (items, selectedCategory) => {

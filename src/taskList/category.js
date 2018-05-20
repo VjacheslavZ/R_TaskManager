@@ -34,6 +34,7 @@ export const TaskList = (props) => {
 
 
 const TasksList = (props) => {
+
     const {todos, toggleDone, saveTodo, removeTodo} = props;
     const locUrl = props.location.pathname;
     const sortedCategory = [];
@@ -51,7 +52,7 @@ const TasksList = (props) => {
                     map(sortedCategory, task => (
                             <Todo data={task}
                                   key={task.id}
-                                  toggleDone={toggleDone}
+                                    /*toggleDone={toggleDone}*/
                                   saveTodo={saveTodo}
                                   removeTodo={removeTodo}/>
                         )

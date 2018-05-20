@@ -48,19 +48,9 @@ export const todos = function (state = initialState, action) {
 
     switch (type) {
         case constants.TODO_DONE_TOGGLE: {
-            /*const id = payload;
-
-            const modifiedItem = getUpdatedListItem(state.items, id, {
-                isDone: !state.items[id].isDone
-            });
-
-            const modifiedItemList = Object.assign({}, state.items, {[id]: modifiedItem});
-
-            return Object.assign({}, state, {items: modifiedItemList});*/
-
 
             return state.updateIn(
-                ['items', `${payload}`, 'done'],
+                ['items', `${payload}`, 'isDone'],
                 (done) => !done
             )
 
