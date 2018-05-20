@@ -1,3 +1,5 @@
+import Immutable from 'immutable';
+
 import * as constants from '../actions/constants';
 
 const initialState = {
@@ -12,7 +14,6 @@ export const addCategory = function (state = initialState, action) {
             return Object.assign({}, state, {
                 text: payload,
             });
-
         case constants.CATEGORY_ADD:
             return initialState;
 

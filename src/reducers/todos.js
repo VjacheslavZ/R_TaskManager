@@ -53,6 +53,7 @@ export const todos = function (state = initialState, action) {
                 (done) => !done
             )
         }
+
         case constants.TODO_SAVE: {
             const {id, newTaskText, newTaskName} = payload;
 
@@ -66,9 +67,11 @@ export const todos = function (state = initialState, action) {
             )
 
         }
+
         case constants.TODO_REMOVE: {
             return state.deleteIn(['items', `${payload}`]);
         }
+
         case constants.TASK_ADD: {
             const {taskName, taskText, url} = payload;
             const lastId = getNewId(state.get('items').toJS());
@@ -78,7 +81,6 @@ export const todos = function (state = initialState, action) {
                 taskName: taskName,
                 taskText: taskText,
                 category: url,
-                isDone: false
             });
 
             return state.update(

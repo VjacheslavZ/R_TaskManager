@@ -6,8 +6,8 @@ import { addNewTask } from "./add-task";
 
 
 export const reducer = combineReducers({
-    categories,
     todos,
     addCategory,
+    categories,
     addNewTask
 });
