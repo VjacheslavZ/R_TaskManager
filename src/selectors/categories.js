@@ -9,5 +9,5 @@ export const list = createSelector(
 
 export const selectedCategory = createSelector(
     data,
-    data => data.get('selectedCategory')
+    data => {return data.get('selectedCategory')}
 );

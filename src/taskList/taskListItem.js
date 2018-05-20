@@ -36,7 +36,6 @@ export class List extends PureComponent {
 }
 
 const Item = ({data, toggleDone, toggleMode, removeTodo}) => {
-    // console.log(removeTodo)
     const deleteTask = () =>{
         const {id} = data;
 

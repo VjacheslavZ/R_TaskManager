@@ -8,6 +8,7 @@ import { sidebarConnector } from '../sidebar/connector';
 import { contentConnector } from '../connector/connector'
 
 const MySidebar = sidebarConnector(Sidebar);
+
 const MyProgressBar = contentConnector(ProgressBar);
 const MyContentList = contentConnector(TaskList);
 

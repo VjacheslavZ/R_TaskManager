@@ -14,10 +14,9 @@ const selectCatId = createImmutableSelector(
 );
 
 /*selectCatId: state.categories.selectedCategory*/
-
 export const itemsForSelectedCategory = createImmutableSelector(
     [items, selectedCategory],
     (items, selectedCategory) => {
-        return items/*.filter(item => item.get('categoryId') === selectedCategory)*///url
+        return {items, selectedCategory}
     }
 );

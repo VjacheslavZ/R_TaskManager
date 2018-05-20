@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 const contentSelector = createSelector(
     itemsForSelectedCategory,
     (todos) => ({
-        todos: todos.toJS()
+        todos: todos.items.toJS()
     })
 );
 
