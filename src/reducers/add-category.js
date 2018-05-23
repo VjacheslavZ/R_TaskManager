@@ -1,5 +1,3 @@
-import Immutable from 'immutable';
-
 import * as constants from '../actions/constants';
 
 const initialState = {

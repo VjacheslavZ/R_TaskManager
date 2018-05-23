@@ -1,12 +1,11 @@
-import React, { Fragment} from 'react';
+import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import { modalConnector } from './connector';
 
 
 export const ModalComponent = (props) => {
 
-    const { title, show, children, hideModal, onHide, buttons } = props;
-
+    const { title, show, children, onHide, buttons, id } = props;
 
     return (
         <Modal show={ show } onHide={ onHide }>

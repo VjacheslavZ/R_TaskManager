@@ -35,7 +35,7 @@ export const TaskList = (props) => {
 
 const TasksList = (props) => {
 
-    const {todos, toggleDone, saveTodo, removeTodo} = props;
+    const {todos, removeTodo} = props;
     const locUrl = props.location.pathname;
     const sortedCategory = [];
 

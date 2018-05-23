@@ -1,6 +1,7 @@
 import * as constants from '../actions/constants';
 import { getNewId } from "../helpers";
 import Immutable from 'immutable';
+import {TASK_DELETE_CONFIRM} from "../actions/constants";
 
 const initialState = Immutable.fromJS({
     list: {
@@ -58,11 +59,9 @@ const initialState = Immutable.fromJS({
 
 export const categories = function (state = initialState, action) {
     const { type, payload } = action;
-
     switch (type) {
         case constants.CATEGORY_SELECT:
             return state.set('selectedCategory', payload);
-
         case constants.CATEGORY_ADD: {
             const id = getNewId(state.get('list').toJS());
             return state.update(
@@ -78,7 +77,6 @@ export const categories = function (state = initialState, action) {
                     return value.set(id.toString(), newCategory)
                 }
             );
-
         }
         default: {
             return state;

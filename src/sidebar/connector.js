@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { selectCategory,
          addCategory,
          addCategoryChange} from '../actions';
-import { createSelector } from 'reselect';
+
 import { createImmutableSelector } from '../helpers';
 
 import {list, selectedCategory} from "../selectors/categories";
