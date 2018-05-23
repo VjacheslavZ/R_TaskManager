@@ -1,6 +1,6 @@
 import Immutable from 'immutable';
 import { createAction, createImmutableSelector } from '../../helpers';
-import { TASK_DELETE_CONFIRM } from '../../actions/constants';
+import { TASK_DELETE_CONFIRM, TASK_DELETE_REJECT } from '../../actions/constants';
 /*constants*/
 const MODAL_SHOW = 'app/modals/MODAL_SHOW';
 const MODAL_HIDE = 'app/modals/MODAL_HIDE';
@@ -19,6 +19,9 @@ export default function reducer(state = initialState, action) {
             return state.set('show', false);
         },
         [TASK_DELETE_CONFIRM]: () => {
+            return state.set('show', false)
+        },
+        [TASK_DELETE_REJECT]: () => {
             return state.set('show', false)
         }
     };

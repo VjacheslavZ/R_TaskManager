@@ -4,9 +4,9 @@ import { modalConnector } from './connector';
 
 
 export const ModalComponent = (props) => {
+
     const { title, show, children, hideModal, onHide, buttons } = props;
 
-    console.log(title)
 
     return (
         <Modal show={ show } onHide={ onHide }>
@@ -26,7 +26,7 @@ export const ModalComponent = (props) => {
                 {
                     buttons ? buttons : (
                         <div className="text-center">
-                            <Button onClick={ onHide }>Close</Button>
+                                <Button onClick={ onHide }>Close</Button>
                         </div>
                     )
                 }

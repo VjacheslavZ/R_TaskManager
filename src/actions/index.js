@@ -17,3 +17,4 @@ export const addNewTaskNameChange = createAction(constants.TASK_ADD_NAME_CHANGE)
 export const addNewTaskDescChange = createAction(constants.TASK_ADD_DESC_CHANGE);
 
 export const confirmTaskDeletion = createAction(constants.TASK_DELETE_CONFIRM);
+export const rejectTaskDeletion = createAction(constants.TASK_DELETE_REJECT);

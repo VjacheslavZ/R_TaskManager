@@ -38,11 +38,9 @@ export class List extends PureComponent {
 const Item = ({data, toggleDone, toggleMode, removeTodo, showModal}) => {
     const deleteTask = () =>{
         const {id} = data;
-
-        removeTodo(id)
+        // removeTodo(id)
+        showModal()
     };
-
-    console.log(showModal)
     return(
         <Fragment>
             <input type="checkbox"
@@ -57,7 +55,7 @@ const Item = ({data, toggleDone, toggleMode, removeTodo, showModal}) => {
 
             <div className="task-list__control">
                 <button className="task-list__edit" onClick={toggleMode}>EDIT</button>
-                <button className="task-list__dell" onClick={ () => showModal() } /*onClick={deleteTask}*/>DELL</button>
+                <button className="task-list__dell" /*{onClick={ () => showModal() }}*/ onClick={deleteTask}>DELL</button>
             </div>
         </Fragment>
     )
