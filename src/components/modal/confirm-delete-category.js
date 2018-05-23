@@ -14,6 +14,7 @@ export const Confirm = ({ show, hideModal, onConfirm, onReject }) => {
         <ModalComponent buttons={
             <Buttons onConfirm={ onConfirm } onReject={ onReject }/>
         }>
+            {/*{console.log(show, hideModal, onConfirm, onReject)}*/}
             <p>Are U sure you want to delete this task?</p>
         </ModalComponent>
     );

@@ -52,8 +52,6 @@ const TasksList = (props) => {
                     map(sortedCategory, task => (
                             <Todo data={task}
                                   key={task.id}
-                                    /*toggleDone={toggleDone}*/
-                                    /*saveTodo={saveTodo}*/
                                   removeTodo={removeTodo}/>
                         )
                     )

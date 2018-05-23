@@ -6,7 +6,7 @@ import { modalConnector } from './connector';
 export const ModalComponent = (props) => {
     const { title, show, children, hideModal, onHide, buttons } = props;
 
-    console.log(props)
+    console.log(title)
 
     return (
         <Modal show={ show } onHide={ onHide }>
