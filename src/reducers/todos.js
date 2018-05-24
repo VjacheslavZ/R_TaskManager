@@ -63,17 +63,16 @@ export const todos = function (state = initialState, action) {
 
             const data = Immutable.Map({
                 taskName: newTaskName,
+                taskText: newTaskText
             });
 
-            return state.updateIn(
-                ['items', `${id}`, 'taskName'], () => newTaskName,
-                //todo add newTaskText
-            )
+            return state.updateIn(['items', `${id}`, 'taskName'], () => newTaskName)
+                        .updateIn(['items', `${id}`, 'taskText'], () => newTaskText)
 
         }
         case constants.TODO_REMOVE: {
-            const id = state.get('itemIdInModal');
-            const newStateDel = state.deleteIn(["items",  id.toString()]);
+            const id = state.get('itemIdInModal').toString();
+            const newStateDel = state.deleteIn(["items",  id]);
             return newStateDel
         }
 
