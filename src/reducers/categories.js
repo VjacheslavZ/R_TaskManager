@@ -1,7 +1,6 @@
 import * as constants from '../actions/constants';
 import { getNewId } from "../helpers";
 import Immutable from 'immutable';
-import {TASK_DELETE_CONFIRM} from "../actions/constants";
 
 const initialState = Immutable.fromJS({
     list: {
@@ -54,7 +53,7 @@ const initialState = Immutable.fromJS({
                 url: "/advanced/type-checking-with-propTypes",
                 parentId: 6},
     },
-    selectedCategory: 1
+    selectedCategory: ""
 });
 
 export const categories = function (state = initialState, action) {

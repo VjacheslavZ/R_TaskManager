@@ -1,8 +1,6 @@
 import Immutable from 'immutable';
 import * as constants from '../actions/constants';
 import { getNewId } from "../helpers";
-import {MODAL_SHOW} from "../actions/constants";
-
 
 const initialState = Immutable.fromJS({
     items: {
@@ -61,11 +59,6 @@ export const todos = function (state = initialState, action) {
         case constants.TODO_SAVE: {
             const {id, newTaskText, newTaskName} = payload;
 
-            const data = Immutable.Map({
-                taskName: newTaskName,
-                taskText: newTaskText
-            });
-
             return state.updateIn(['items', `${id}`, 'taskName'], () => newTaskName)
                         .updateIn(['items', `${id}`, 'taskText'], () => newTaskText)
 
@@ -73,6 +66,7 @@ export const todos = function (state = initialState, action) {
         case constants.TODO_REMOVE: {
             const id = state.get('itemIdInModal').toString();
             const newStateDel = state.deleteIn(["items",  id]);
+
             return newStateDel
         }
 

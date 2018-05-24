@@ -18,7 +18,7 @@ export default function reducer(state = initialState, action) {
             const {taskName, id} = action.payload;
             return state.set('show', true)
                         .set('title', taskName)
-                        .set('id', parseInt(id));
+                        .set('id', parseInt(id, 10));
         },
         [MODAL_HIDE]: () => {
             return state.set('show', false);
