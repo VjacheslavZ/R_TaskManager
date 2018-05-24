@@ -1,8 +1,8 @@
 import Immutable from 'immutable';
 import { createAction, createImmutableSelector } from '../../helpers';
-import { TASK_DELETE_CONFIRM, TASK_DELETE_REJECT } from '../../actions/constants';
+import { TASK_DELETE_CONFIRM, TASK_DELETE_REJECT, TODO_REMOVE } from '../../actions/constants';
+import { MODAL_SHOW } from "../../actions/constants";
 /*constants*/
-const MODAL_SHOW = 'app/modals/MODAL_SHOW';
 const MODAL_HIDE = 'app/modals/MODAL_HIDE';
 
 const initialState = Immutable.fromJS({
@@ -18,7 +18,7 @@ export default function reducer(state = initialState, action) {
             const {taskName, id} = action.payload;
             return state.set('show', true)
                         .set('title', taskName)
-                        .set('id', id);
+                        .set('id', parseInt(id));
         },
         [MODAL_HIDE]: () => {
             return state.set('show', false);
@@ -28,13 +28,15 @@ export default function reducer(state = initialState, action) {
         },
         [TASK_DELETE_REJECT]: () => {
             return state.set('show', false)
+        },
+        [TODO_REMOVE]: () => {
+            return state.set('show', false)
         }
     };
     return action.type in actions ? actions[action.type]() : state;
 }
 
 /*actions*/
-export const showModal = createAction(MODAL_SHOW);
 export const hideModal = createAction(MODAL_HIDE);
 
 /*selectors*/

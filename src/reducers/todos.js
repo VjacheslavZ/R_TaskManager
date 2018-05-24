@@ -1,6 +1,7 @@
 import Immutable from 'immutable';
 import * as constants from '../actions/constants';
 import { getNewId } from "../helpers";
+import {MODAL_SHOW} from "../actions/constants";
 
 
 const initialState = Immutable.fromJS({
@@ -40,20 +41,23 @@ const initialState = Immutable.fromJS({
             "taskText": "task text 3",
             "isDone": false
         }
-    }
+    },
+    itemIdInModal: ''
 });
 
 export const todos = function (state = initialState, action) {
     const {type, payload} = action;
-
     switch (type) {
+        case constants.MODAL_SHOW: {
+            const {id} = action.payload;
+            return state.set('itemIdInModal', id)
+        }
         case constants.TODO_DONE_TOGGLE: {
             return state.updateIn(
                 ['items', `${payload}`, 'isDone'],
                 (done) => !done
             )
         }
-
         case constants.TODO_SAVE: {
             const {id, newTaskText, newTaskName} = payload;
 
@@ -67,9 +71,10 @@ export const todos = function (state = initialState, action) {
             )
 
         }
-
         case constants.TODO_REMOVE: {
-            return state.deleteIn(['items', `${payload}`]);
+            const id = state.get('itemIdInModal');
+            const newStateDel = state.deleteIn(["items",  id.toString()]);
+            return newStateDel
         }
 
         case constants.TASK_ADD: {

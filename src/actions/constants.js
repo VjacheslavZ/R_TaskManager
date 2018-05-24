@@ -17,3 +17,5 @@ export const TASK_ADD = 'TASK_ADD';
 export const TASK_ADD_NAME_CHANGE = 'TASK_ADD_NAME_CHANGE';
 export const TASK_ADD_DESC_CHANGE = 'TASK_ADD_DESC_CHANGE';
 
+export const MODAL_SHOW = 'app/modals/MODAL_SHOW';
+
