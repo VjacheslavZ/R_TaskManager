@@ -32,14 +32,9 @@ export const TaskList = (props) => {
 const TasksList = (props) => {
 
     const {todos, removeTodo} = props;
-    const locUrl = props.location.pathname;
-    const sortedCategory = [];
+    const currentPath = props.location.pathname;
 
-    filter(todos, (task) => {
-        if (task.category === locUrl) {
-            sortedCategory.push(task)
-        }
-    });
+    const sortedCategory = filter(todos, task => task.category === currentPath);
 
     return (
         <ul className="task-list__todo">

@@ -1,19 +1,14 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { withRouter } from 'react-router'
 import {filter} from 'lodash';
 
-
 export const ProgressBar = (props) => {
+    const { location } = props;
+
     return(
-        <Switch>
-            <Route path='/' component={(route) => (
-                <Progress {...props} {...route} />
-            )}>
-            </Route>
-        </Switch>
+        <Progress {...props} location={location}/>
     )
 };
-
 
 const Progress = (props) => {
     const url = props.location.pathname;

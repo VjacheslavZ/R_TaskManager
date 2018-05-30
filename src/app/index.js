@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { TaskList } from '../taskList/category';
 import { Sidebar } from '../sidebar';
 import {ProgressBar} from "../progressBar/propgressBar";
-
+import { withRouter } from 'react-router';
 
 import { sidebarConnector } from '../sidebar/connector';
 import { contentConnector } from './connector'
@@ -12,6 +12,7 @@ import Confirm from '../components/modal/confirm-delete-category';
 /*Connectors*/
 const MySidebar = sidebarConnector(Sidebar);
 const MyProgressBar = contentConnector(ProgressBar);
+const MyProgressBarWithRout = withRouter(MyProgressBar);
 const MyContentList = contentConnector(TaskList);
 const ConfirmTaskDeletion = confirmModalConnector(Confirm);
 
@@ -24,7 +25,7 @@ class Root extends Component {
 
                         <div className='top-section'>
                             <span>Progress</span>
-                            <MyProgressBar/>
+                            <MyProgressBarWithRout/>
                         </div>
 
                         <div className="main-section">
