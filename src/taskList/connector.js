@@ -1,8 +1,13 @@
 import { connect } from 'react-redux';
-import { addNewTask,
-         addNewTaskNameChange,
-         addNewTaskDescChange } from '../actions';
+import {createConnectorForSelector} from "../helpers";
 
+import {
+    addNewTask,
+    addNewTaskNameChange,
+    addNewTaskDescChange,
+    toggleDone,
+    saveTodo,
+    showModal } from '../actions';
 
 export const addNewTaskConnector = connect(
     (state) => ({
@@ -13,4 +18,10 @@ export const addNewTaskConnector = connect(
         onAddTask: addNewTask,
         addNewTaskNameChange: addNewTaskNameChange,
         addNewTaskDescChange: addNewTaskDescChange
+});
+
+export const todoConnector = createConnectorForSelector(null, {
+    toggleDone,
+    saveTodo: saveTodo,
+    showModal: showModal
 });

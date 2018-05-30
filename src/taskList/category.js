@@ -4,11 +4,10 @@ import {Switch, Route} from 'react-router-dom';
 
 import {List} from './taskListItem';
 import { AddNewTask } from '../add-item/addNewTask';
-import {addNewTaskConnector} from "./connector";
-import  { todoConnector } from "../connector/connector";
+
+import {addNewTaskConnector, todoConnector} from "./connector";
 
 const MyAddNewTask = addNewTaskConnector(AddNewTask);
-
 const Todo = todoConnector(List);
 
 export const TaskList = (props) => {
