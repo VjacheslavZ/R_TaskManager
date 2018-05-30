@@ -1,11 +1,11 @@
-import React, {Fragment} from 'react';
-import {map, filter} from 'lodash';
-import {Switch, Route} from 'react-router-dom';
+import React, { Fragment } from 'react';
+import { map, filter } from 'lodash';
+import { Route } from 'react-router-dom';
 
 import {List} from './taskListItem';
 import { AddNewTask } from '../add-item/addNewTask';
 
-import {addNewTaskConnector, todoConnector} from "./connector";
+import { addNewTaskConnector, todoConnector } from "./connector";
 
 const MyAddNewTask = addNewTaskConnector(AddNewTask);
 const Todo = todoConnector(List);

@@ -19,5 +19,5 @@ export const contentConnector = createConnectorForSelector(contentSelector);
 export const confirmModalConnector = createConnectorForSelector(null, {
     onConfirm: () => confirmTaskDeletion(),
     onReject: () => rejectTaskDeletion(),
-    removeTodo: removeTodo,
+    removeTodo,
 });

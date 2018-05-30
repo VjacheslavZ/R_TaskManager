@@ -16,12 +16,12 @@ export const addNewTaskConnector = connect(
         category: "/react",
     }),{
         onAddTask: addNewTask,
-        addNewTaskNameChange: addNewTaskNameChange,
-        addNewTaskDescChange: addNewTaskDescChange
+        addNewTaskNameChange,
+        addNewTaskDescChange
 });
 
 export const todoConnector = createConnectorForSelector(null, {
     toggleDone,
-    saveTodo: saveTodo,
-    showModal: showModal
+    saveTodo,
+    showModal
 });
