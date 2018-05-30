@@ -61,8 +61,11 @@ export const categories = function (state = initialState, action) {
     switch (type) {
         case constants.CATEGORY_SELECT:
             return state.set('selectedCategory', payload);
+
         case constants.CATEGORY_ADD: {
             const id = getNewId(state.get('list').toJS());
+            const url = payload.replace(/ /g, '-');
+
             return state.update(
                 'list',
                 value => {
@@ -70,7 +73,7 @@ export const categories = function (state = initialState, action) {
                         id,
                         name: payload,
                         parentId: null,
-                        url: payload,
+                        url
                     });
 
                     return value.set(id.toString(), newCategory)

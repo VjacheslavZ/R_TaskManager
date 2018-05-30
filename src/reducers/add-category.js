@@ -12,7 +12,6 @@ export const addCategory = function (state = initialState, action) {
             return Object.assign({}, state, {
                 text: payload,
             });
-            //return state.set('text', ()=> {payload})
         case constants.CATEGORY_ADD:
             return initialState;
 
