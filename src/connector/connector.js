@@ -9,15 +9,6 @@ import { toggleDone,
          confirmTaskDeletion,
          rejectTaskDeletion } from '../actions'
 
-const contentSelector = createSelector(
-    itemsForSelectedCategory,
-    (todos) => ({
-        todos: todos.items.toJS()
-    })
-);
-
-export const contentConnector = createConnectorForSelector(contentSelector);
-
 export const todoConnector = createConnectorForSelector(null, {
     toggleDone,
     saveTodo: saveTodo,

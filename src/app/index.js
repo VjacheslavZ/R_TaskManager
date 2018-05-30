@@ -5,16 +5,15 @@ import {ProgressBar} from "../progressBar/propgressBar";
 
 
 import { sidebarConnector } from '../sidebar/connector';
-import { contentConnector } from '../connector/connector'
+import { contentConnector } from './connector'
 import { confirmModalConnector } from '../connector/connector';
 import Confirm from '../components/modal/confirm-delete-category';
 
+/*Connectors*/
 const MySidebar = sidebarConnector(Sidebar);
-
 const MyProgressBar = contentConnector(ProgressBar);
 const MyContentList = contentConnector(TaskList);
 const ConfirmTaskDeletion = confirmModalConnector(Confirm);
-
 
 class Root extends Component {
     render(){
