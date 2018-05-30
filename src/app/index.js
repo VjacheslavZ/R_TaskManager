@@ -6,7 +6,7 @@ import {ProgressBar} from "../progressBar/propgressBar";
 
 import { sidebarConnector } from '../sidebar/connector';
 import { contentConnector } from './connector'
-import { confirmModalConnector } from '../connector/connector';
+import { confirmModalConnector } from './connector';
 import Confirm from '../components/modal/confirm-delete-category';
 
 /*Connectors*/

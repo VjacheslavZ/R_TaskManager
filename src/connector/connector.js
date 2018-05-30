@@ -1,50 +1,20 @@
-import { itemsForSelectedCategory } from '../selectors';
-import { createConnectorForSelector } from '../helpers';
-import { createSelector } from 'reselect';
+import {itemsForSelectedCategory} from '../selectors';
+import {createConnectorForSelector} from '../helpers';
+import {createSelector} from 'reselect';
 
-import { toggleDone,
-         saveTodo,
-         removeTodo,
-         showModal,
-         confirmTaskDeletion,
-         rejectTaskDeletion } from '../actions'
+import {
+    toggleDone,
+    saveTodo,
+    removeTodo,
+    showModal,
+    confirmTaskDeletion,
+    rejectTaskDeletion } from '../actions'
 
 export const todoConnector = createConnectorForSelector(null, {
     toggleDone,
     saveTodo: saveTodo,
     showModal: showModal
 });
-
-export const confirmModalConnector = createConnectorForSelector(null, {
-    onConfirm: () => confirmTaskDeletion(),
-    onReject: () => rejectTaskDeletion(),
-    removeTodo: removeTodo,
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*const contentSelector = createSelector(
@@ -53,6 +23,7 @@ export const confirmModalConnector = createConnectorForSelector(null, {
         todos: todos.toJS()
     })
 );*/
+
 
 /*
 /!*props to wrapped component*!/
