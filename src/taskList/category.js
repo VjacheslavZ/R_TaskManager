@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {map, filter} from 'lodash';
 import {Switch, Route} from 'react-router-dom';
 
 import {List} from './taskListItem';
 import { AddNewTask } from '../add-item/addNewTask';
 import {addNewTaskConnector} from "./connector";
-import  { todoConnector} from "../connector/connector";
+import  { todoConnector } from "../connector/connector";
 
 const MyAddNewTask = addNewTaskConnector(AddNewTask);
 
@@ -14,20 +14,17 @@ const Todo = todoConnector(List);
 export const TaskList = (props) => {
     return (
         <div className="task-list">
-            <div className="task-list__add-new">
-                <span>Add new task</span>
+            <Route path='/' component={(route) => (
+                <Fragment>
+                    <div className="task-list__add-new">
+                        <span>Add new task</span>
+                        <MyAddNewTask url={route.location.pathname}/>
+                    </div>
 
-                <Route path='/' component={(route) => (
-                    <MyAddNewTask url={route.location.pathname}/>
-                )}/>
-            </div>
-
-            <span>Tasks</span>
-            <Switch>
-                <Route path='/' component={(route) => (
+                    <span>Tasks</span>
                     <TasksList {...props} {...route} />
-                )}/>
-            </Switch>
+                </Fragment>
+            )}/>
         </div>
     );
 };

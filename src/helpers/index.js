@@ -14,7 +14,7 @@ export const createConnectorForSelector = (selector = null, actions = {}) =>
             ? (state) => selector(state)
             : selector, actions
     );
-
+/* ??? */
 export const createImmutableSelector = createSelectorCreator(defaultMemoize, Immutable.is);
 
 export const getNewId = function (list) {
